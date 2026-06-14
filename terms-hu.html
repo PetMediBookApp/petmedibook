@@ -3,197 +3,452 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Felhasználási feltételek — PetMediBook</title>
+<title>PetMediBook — Felhasználási feltételek / Terms of Use</title>
 <style>
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    color: #191C19;
-    background: #FBFDF9;
+  :root{
+    --ink:#14201a;
+    --muted:#5c6b63;
+    --line:#dfe6e1;
+    --bg:#f7faf8;
+    --card:#ffffff;
+    --accent:#1b5e20;
+    --accent-soft:#e6f0e8;
+    --notice:#fff7e6;
+    --notice-line:#e8c779;
+    --notice-ink:#6b4e12;
   }
-  h1 { color: #2E7D5B; border-bottom: 2px solid #2E7D5B; padding-bottom: 10px; }
-  h2 { color: #2E7D5B; margin-top: 30px; }
-  h3 { color: #414941; margin-top: 20px; }
-  a { color: #2E7D5B; }
-  .meta { color: #414941; font-size: 14px; margin-bottom: 30px; }
-  .highlight { background: #D8E7DB; padding: 12px; border-radius: 8px; margin: 16px 0; }
-  .warning { background: #FFF3CD; padding: 12px; border-left: 4px solid #856404; margin: 16px 0; border-radius: 4px; }
-  ul { padding-left: 24px; }
-  li { margin: 6px 0; }
-  .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #D8E7DB; color: #414941; font-size: 14px; }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.65;
+    font-size:17px;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:32px 22px 80px;}
+  header.top{
+    display:flex;align-items:center;gap:12px;
+    padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:8px;
+  }
+  .logo{
+    width:42px;height:42px;border-radius:11px;flex:none;
+    background:var(--accent);position:relative;
+  }
+  .logo::before{
+    content:"";position:absolute;inset:0;margin:auto;width:18px;height:16px;
+    background:#81c784;
+    clip-path:path("M9 16C9 16 0 10 0 4.5C0 1.8 2 0 4.2 0C6 0 7.6 1.2 9 3C10.4 1.2 12 0 13.8 0C16 0 18 1.8 18 4.5C18 10 9 16 9 16Z");
+    top:13px;
+  }
+  .brandname{font-weight:700;font-size:18px;letter-spacing:-.2px;}
+  .brandsub{color:var(--muted);font-size:13px;}
+  nav.langbar{
+    display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 6px;
+  }
+  nav.langbar button{
+    font:inherit;font-size:13px;font-weight:600;
+    border:1px solid var(--line);background:var(--card);color:var(--muted);
+    padding:6px 13px;border-radius:999px;cursor:pointer;transition:.15s;
+  }
+  nav.langbar button:hover{border-color:var(--accent);color:var(--accent);}
+  nav.langbar button.active{background:var(--accent);border-color:var(--accent);color:#fff;}
+  h1{font-size:25px;letter-spacing:-.4px;margin:26px 0 4px;}
+  .eff{color:var(--muted);font-size:14px;margin-bottom:26px;}
+  h2{
+    font-size:18px;margin:34px 0 8px;letter-spacing:-.2px;
+    padding-top:18px;border-top:1px solid var(--line);
+  }
+  h2:first-of-type{border-top:none;padding-top:0;}
+  p{margin:10px 0;}
+  ul{margin:10px 0;padding-left:22px;}
+  li{margin:5px 0;}
+  .lead{
+    background:var(--accent-soft);border:1px solid var(--line);
+    border-radius:12px;padding:16px 18px;margin:18px 0 8px;color:var(--ink);
+  }
+  .lead p{margin:6px 0;}
+  .notice{
+    background:var(--notice);border:1px solid var(--notice-line);
+    border-radius:12px;padding:14px 16px;margin:16px 0;color:var(--notice-ink);
+    font-size:15.5px;
+  }
+  a{color:var(--accent);}
+  .contact{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:16px 18px;margin:18px 0;
+  }
+  .lang{display:none;}
+  .lang.show{display:block;}
+  footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;}
+  @media (max-width:520px){
+    body{font-size:16px;}
+    h1{font-size:22px;}
+  }
 </style>
 </head>
 <body>
+<div class="wrap">
 
-<h1>Felhasználási feltételek</h1>
+  <header class="top">
+    <div class="logo"></div>
+    <div>
+      <div class="brandname">PetMediBook</div>
+      <div class="brandsub">EK Digital Apps</div>
+    </div>
+  </header>
 
-<div class="meta">
-  <strong>PetMediBook Android-alkalmazás</strong><br>
-  Hatályos: 2026. május 22-től<br>
-  Verzió: 1.0
+  <nav class="langbar" id="langbar">
+    <button data-lang="hu" class="active">Magyar</button>
+    <button data-lang="en">English</button>
+    <button data-lang="de">Deutsch</button>
+    <button data-lang="es">Español</button>
+    <button data-lang="pl">Polski</button>
+  </nav>
+
+  <!-- ===================== HUNGARIAN ===================== -->
+  <section class="lang show" id="hu">
+    <h1>Felhasználási feltételek</h1>
+    <div class="eff">Hatályos: 2026. július 1. &nbsp;·&nbsp; Utolsó frissítés: 2026. június 14.</div>
+
+    <div class="lead">
+      <p>Üdvözlünk a PetMediBookban! A PetMediBook egy kisállat-egészségügyi napló alkalmazás. Az alkalmazás telepítésével és használatával elfogadod az alábbi feltételeket. Kérjük, olvasd el figyelmesen.</p>
+    </div>
+
+    <div class="notice">
+      <strong>Fontos:</strong> A PetMediBook egy nyilvántartó és emlékeztető eszköz. <strong>Nem helyettesíti az állatorvosi szakvéleményt, diagnózist vagy kezelést.</strong> Kisállatod egészségügyi problémája esetén mindig fordulj szakképzett állatorvoshoz.
+    </div>
+
+    <h2>1. A szolgáltató</h2>
+    <p>Az alkalmazást az <strong>„EK Digital Apps"</strong> működési néven üzemeltetjük. Kapcsolat: <a href="mailto:petmedibookapp@gmail.com">petmedibookapp@gmail.com</a>.</p>
+
+    <h2>2. A szolgáltatás</h2>
+    <p>A PetMediBook lehetővé teszi, hogy:</p>
+    <ul>
+      <li>kisállataid egészségügyi adatait (oltások, súly, dokumentumok, jegyzetek) nyilvántartsd,</li>
+      <li>állatorvosi kontaktokat és időpontokat kezelj,</li>
+      <li>egészségügyi emlékeztetőket állíts be,</li>
+      <li>adataidról opcionális biztonsági mentést készíts a saját Google Drive-odra,</li>
+      <li>egészségügyi kivonatot PDF-ben exportálj.</li>
+    </ul>
+    <p>Az általad rögzített adatok az eszközödön, helyben tárolódnak. A részleteket az <a href="privacy-hu.html">Adatkezelési tájékoztató</a> tartalmazza, amely jelen feltételek elválaszthatatlan része.</p>
+
+    <h2>3. Bevezetési időszak és későbbi Premium</h2>
+    <p>Az alkalmazás indulásakor <strong>bevezetési időszak</strong> van érvényben: ez idő alatt az összes funkció <strong>ingyenesen, előfizetés és fizetés nélkül</strong> használható.</p>
+    <p>A jövőben fizetős <strong>Premium</strong> funkciókat vezethetünk be. Erről időben, az alkalmazáson belül vagy ezen az oldalon külön értesítünk. A fizetős előfizetéseket – amennyiben bevezetésre kerülnek – a <strong>Google Play Billing</strong> kezeli: az árak a Google Play áruházban jelennek meg, a megújulás, lemondás és visszatérítés a Google Play mindenkori szabályai szerint történik. Bankkártya-adataidat soha nem látjuk.</p>
+
+    <h2>4. A te felelősséged</h2>
+    <ul>
+      <li>Az alkalmazást nem fejted vissza, nem módosítod és nem használod jogellenes vagy károkozó célra.</li>
+      <li>Tiszteletben tartod a Google Play áruház feltételeit.</li>
+      <li>A kisállatod ellátásával kapcsolatos döntésekért és az emlékeztetők ellenőrzéséért végső soron te felelsz.</li>
+    </ul>
+
+    <h2>5. Felelősség korlátozása</h2>
+    <p>A szolgáltatás „úgy, ahogy van" alapon érhető el. Az ésszerűen elvárható mértékben nem vállalunk felelősséget az alábbiakért:</p>
+    <ul>
+      <li>a szolgáltatás esetleges hibája, kimaradása vagy adatvesztés (különösen, ha nem aktiváltad a biztonsági mentést);</li>
+      <li>az emlékeztetők esetleges késése vagy elmaradása;</li>
+      <li>harmadik felek (pl. Google, eszközgyártó) hibájából eredő károk.</li>
+    </ul>
+    <p>A PetMediBook nem helyettesít állatorvosi tanácsadást. A jogszabály által biztosított kötelező fogyasztói jogaidat a fenti korlátozások nem érintik.</p>
+
+    <h2>6. Szellemi tulajdon</h2>
+    <p>Az alkalmazás, annak kódja, megjelenése és márkaneve az „EK Digital Apps" működési név mögötti fejlesztő tulajdona. Az általad rögzített adatok (kisállat-információk, fényképek, dokumentumok) <strong>a te tulajdonod</strong> – ezek felett semmilyen jogot nem gyakorolunk.</p>
+
+    <h2>7. A szolgáltatás és a feltételek módosítása</h2>
+    <p>A szolgáltatást fejleszthetjük, módosíthatjuk, és a jelen feltételeket időről időre frissíthetjük. A lényeges változásokról az alkalmazásban vagy ezen az oldalon, a „Utolsó frissítés" dátum módosításával adunk tájékoztatást.</p>
+
+    <h2>8. Irányadó jog és jogviták</h2>
+    <p>A jelen feltételekre a magyar jog és az EU vonatkozó szabályai irányadók. Jogvita esetén a felek elsősorban békés úton, e-mailen keresztül rendezik a vitát. Fogyasztói jogvita esetén a fogyasztó a lakóhelye szerinti bírósághoz is fordulhat, illetve a Pest Vármegyei Békéltető Testülethez.</p>
+
+    <div class="contact">
+      <strong>Kapcsolat</strong><br>
+      PetMediBook · EK Digital Apps<br>
+      <a href="mailto:petmedibookapp@gmail.com">petmedibookapp@gmail.com</a>
+    </div>
+  </section>
+
+  <!-- ===================== ENGLISH ===================== -->
+  <section class="lang" id="en">
+    <h1>Terms of Use</h1>
+    <div class="eff">Effective: 1 July 2026 &nbsp;·&nbsp; Last updated: 14 June 2026</div>
+
+    <div class="lead">
+      <p>Welcome to PetMediBook! PetMediBook is a pet health journal app. By installing and using the app, you accept these terms. Please read them carefully.</p>
+    </div>
+
+    <div class="notice">
+      <strong>Important:</strong> PetMediBook is a record-keeping and reminder tool. <strong>It does not replace professional veterinary advice, diagnosis or treatment.</strong> If your pet has a health problem, always consult a qualified veterinarian.
+    </div>
+
+    <h2>1. Who provides the service</h2>
+    <p>The app is operated under the trading name <strong>"EK Digital Apps"</strong>. Contact: <a href="mailto:petmedibookapp@gmail.com">petmedibookapp@gmail.com</a>.</p>
+
+    <h2>2. The service</h2>
+    <p>PetMediBook lets you:</p>
+    <ul>
+      <li>keep records of your pets' health data (vaccinations, weight, documents, notes),</li>
+      <li>manage veterinary contacts and appointments,</li>
+      <li>set health reminders,</li>
+      <li>optionally back up your data to your own Google Drive,</li>
+      <li>export a health summary as a PDF.</li>
+    </ul>
+    <p>The data you enter is stored locally on your device. For details, see our <a href="privacy-hu.html">Privacy Policy</a>, which forms an integral part of these terms.</p>
+
+    <h2>3. Introductory period and future Premium</h2>
+    <p>At launch, an <strong>introductory period</strong> applies: during this time all features are available <strong>free of charge, with no subscription or payment</strong>.</p>
+    <p>We may introduce paid <strong>Premium</strong> features in the future. We will give you advance notice in the app or on this page. Any paid subscriptions, if introduced, will be handled by <strong>Google Play Billing</strong>: prices are shown in the Google Play store, and renewal, cancellation and refunds follow Google Play's then-current rules. We never see your card details.</p>
+
+    <h2>4. Your responsibilities</h2>
+    <ul>
+      <li>You will not reverse-engineer, modify or use the app for unlawful or harmful purposes.</li>
+      <li>You will respect the Google Play store terms.</li>
+      <li>You remain ultimately responsible for your pet's care and for checking reminders.</li>
+    </ul>
+
+    <h2>5. Limitation of liability</h2>
+    <p>The service is provided "as is". To the extent reasonably permitted, we are not liable for:</p>
+    <ul>
+      <li>any failure, interruption or data loss (especially if you have not enabled backup);</li>
+      <li>any delay or failure of reminders;</li>
+      <li>damages caused by third parties (e.g. Google, device manufacturer).</li>
+    </ul>
+    <p>PetMediBook is not a substitute for veterinary advice. Your mandatory consumer rights under applicable law are not affected by the above.</p>
+
+    <h2>6. Intellectual property</h2>
+    <p>The app, its code, design and brand belong to the developer operating under the name "EK Digital Apps". The data you enter (pet information, photos, documents) <strong>belongs to you</strong> — we claim no rights over it.</p>
+
+    <h2>7. Changes to the service and terms</h2>
+    <p>We may develop and modify the service and update these terms from time to time. We will indicate material changes in the app or on this page by updating the "Last updated" date.</p>
+
+    <h2>8. Governing law and disputes</h2>
+    <p>These terms are governed by Hungarian law and applicable EU rules. In case of a dispute, the parties will first seek an amicable resolution by email. A consumer may also bring proceedings before the courts of their place of residence, or before the relevant conciliation body.</p>
+
+    <div class="contact">
+      <strong>Contact</strong><br>
+      PetMediBook · EK Digital Apps<br>
+      <a href="mailto:petmedibookapp@gmail.com">petmedibookapp@gmail.com</a>
+    </div>
+  </section>
+
+  <!-- ===================== GERMAN ===================== -->
+  <section class="lang" id="de">
+    <h1>Nutzungsbedingungen</h1>
+    <div class="eff">Gültig ab: 1. Juli 2026 &nbsp;·&nbsp; Zuletzt aktualisiert: 14. Juni 2026</div>
+
+    <div class="lead">
+      <p>Willkommen bei PetMediBook! PetMediBook ist eine App als Gesundheitstagebuch für Haustiere. Mit der Installation und Nutzung der App akzeptierst du diese Bedingungen. Bitte lies sie aufmerksam.</p>
+    </div>
+
+    <div class="notice">
+      <strong>Wichtig:</strong> PetMediBook ist ein Werkzeug zur Dokumentation und Erinnerung. <strong>Es ersetzt keine tierärztliche Beratung, Diagnose oder Behandlung.</strong> Bei einem Gesundheitsproblem deines Tieres wende dich immer an eine qualifizierte Tierärztin oder einen qualifizierten Tierarzt.
+    </div>
+
+    <h2>1. Anbieter</h2>
+    <p>Die App wird unter dem Geschäftsnamen <strong>„EK Digital Apps"</strong> betrieben. Kontakt: <a href="mailto:petmedibookapp@gmail.com">petmedibookapp@gmail.com</a>.</p>
+
+    <h2>2. Die Leistung</h2>
+    <p>Mit PetMediBook kannst du:</p>
+    <ul>
+      <li>die Gesundheitsdaten deiner Tiere (Impfungen, Gewicht, Dokumente, Notizen) erfassen,</li>
+      <li>Tierarztkontakte und Termine verwalten,</li>
+      <li>Gesundheitserinnerungen einstellen,</li>
+      <li>deine Daten optional in deinem eigenen Google Drive sichern,</li>
+      <li>eine Gesundheitsübersicht als PDF exportieren.</li>
+    </ul>
+    <p>Die von dir eingegebenen Daten werden lokal auf deinem Gerät gespeichert. Einzelheiten findest du in unserer <a href="privacy-hu.html">Datenschutzerklärung</a>, die integraler Bestandteil dieser Bedingungen ist.</p>
+
+    <h2>3. Einführungszeitraum und künftiges Premium</h2>
+    <p>Zum Start gilt ein <strong>Einführungszeitraum</strong>: In dieser Zeit sind alle Funktionen <strong>kostenlos, ohne Abonnement und ohne Zahlung</strong> nutzbar.</p>
+    <p>Wir können künftig kostenpflichtige <strong>Premium</strong>-Funktionen einführen. Darüber informieren wir dich rechtzeitig in der App oder auf dieser Seite. Etwaige kostenpflichtige Abonnements werden über <strong>Google Play Billing</strong> abgewickelt: Die Preise werden im Google-Play-Store angezeigt; Verlängerung, Kündigung und Erstattung richten sich nach den jeweils geltenden Google-Play-Regeln. Deine Kartendaten sehen wir nie.</p>
+
+    <h2>4. Deine Pflichten</h2>
+    <ul>
+      <li>Du wirst die App nicht zurückentwickeln, verändern oder für rechtswidrige oder schädliche Zwecke nutzen.</li>
+      <li>Du beachtest die Bedingungen des Google-Play-Stores.</li>
+      <li>Du bleibst letztlich für die Versorgung deines Tieres und die Kontrolle der Erinnerungen verantwortlich.</li>
+    </ul>
+
+    <h2>5. Haftungsbeschränkung</h2>
+    <p>Die Leistung wird „wie besehen" bereitgestellt. Im rechtlich zulässigen Rahmen haften wir nicht für:</p>
+    <ul>
+      <li>Ausfälle, Unterbrechungen oder Datenverlust (insbesondere, wenn du die Sicherung nicht aktiviert hast);</li>
+      <li>Verzögerung oder Ausbleiben von Erinnerungen;</li>
+      <li>Schäden durch Dritte (z. B. Google, Gerätehersteller).</li>
+    </ul>
+    <p>PetMediBook ersetzt keine tierärztliche Beratung. Deine zwingenden Verbraucherrechte nach geltendem Recht bleiben von den vorstehenden Beschränkungen unberührt.</p>
+
+    <h2>6. Geistiges Eigentum</h2>
+    <p>Die App, ihr Code, ihr Design und ihre Marke gehören dem unter dem Namen „EK Digital Apps" tätigen Entwickler. Die von dir eingegebenen Daten (Tierinformationen, Fotos, Dokumente) <strong>gehören dir</strong> — wir beanspruchen keine Rechte daran.</p>
+
+    <h2>7. Änderungen der Leistung und der Bedingungen</h2>
+    <p>Wir können die Leistung weiterentwickeln und ändern und diese Bedingungen von Zeit zu Zeit aktualisieren. Wesentliche Änderungen kennzeichnen wir in der App oder auf dieser Seite durch Aktualisierung des Datums „Zuletzt aktualisiert".</p>
+
+    <h2>8. Anwendbares Recht und Streitigkeiten</h2>
+    <p>Diese Bedingungen unterliegen dem ungarischen Recht und den anwendbaren EU-Vorschriften. Im Streitfall suchen die Parteien zunächst eine gütliche Lösung per E-Mail. Verbraucher können auch die Gerichte ihres Wohnsitzes oder die zuständige Schlichtungsstelle anrufen.</p>
+
+    <div class="contact">
+      <strong>Kontakt</strong><br>
+      PetMediBook · EK Digital Apps<br>
+      <a href="mailto:petmedibookapp@gmail.com">petmedibookapp@gmail.com</a>
+    </div>
+  </section>
+
+  <!-- ===================== SPANISH ===================== -->
+  <section class="lang" id="es">
+    <h1>Condiciones de uso</h1>
+    <div class="eff">En vigor: 1 de julio de 2026 &nbsp;·&nbsp; Última actualización: 14 de junio de 2026</div>
+
+    <div class="lead">
+      <p>¡Bienvenido a PetMediBook! PetMediBook es una aplicación de diario de salud para mascotas. Al instalar y usar la aplicación, aceptas estas condiciones. Léelas con atención.</p>
+    </div>
+
+    <div class="notice">
+      <strong>Importante:</strong> PetMediBook es una herramienta de registro y recordatorios. <strong>No sustituye el consejo, el diagnóstico ni el tratamiento veterinario profesional.</strong> Si tu mascota tiene un problema de salud, consulta siempre a un veterinario cualificado.
+    </div>
+
+    <h2>1. Quién presta el servicio</h2>
+    <p>La aplicación se opera bajo el nombre comercial <strong>«EK Digital Apps»</strong>. Contacto: <a href="mailto:petmedibookapp@gmail.com">petmedibookapp@gmail.com</a>.</p>
+
+    <h2>2. El servicio</h2>
+    <p>PetMediBook te permite:</p>
+    <ul>
+      <li>registrar los datos de salud de tus mascotas (vacunas, peso, documentos, notas),</li>
+      <li>gestionar contactos veterinarios y citas,</li>
+      <li>configurar recordatorios de salud,</li>
+      <li>hacer una copia de seguridad opcional de tus datos en tu propio Google Drive,</li>
+      <li>exportar un resumen de salud en PDF.</li>
+    </ul>
+    <p>Los datos que introduces se almacenan localmente en tu dispositivo. Para más detalles, consulta nuestra <a href="privacy-hu.html">Política de privacidad</a>, que forma parte integrante de estas condiciones.</p>
+
+    <h2>3. Periodo de introducción y Premium futuro</h2>
+    <p>En el lanzamiento se aplica un <strong>periodo de introducción</strong>: durante este tiempo todas las funciones están disponibles <strong>de forma gratuita, sin suscripción ni pago</strong>.</p>
+    <p>En el futuro podemos introducir funciones <strong>Premium</strong> de pago. Te avisaremos con antelación en la aplicación o en esta página. Las suscripciones de pago, si se introducen, se gestionarán mediante <strong>Google Play Billing</strong>: los precios se muestran en la tienda de Google Play, y la renovación, cancelación y reembolsos se rigen por las normas vigentes de Google Play. Nunca vemos los datos de tu tarjeta.</p>
+
+    <h2>4. Tus responsabilidades</h2>
+    <ul>
+      <li>No realizarás ingeniería inversa, ni modificarás ni usarás la aplicación con fines ilícitos o dañinos.</li>
+      <li>Respetarás las condiciones de la tienda Google Play.</li>
+      <li>Sigues siendo el responsable último del cuidado de tu mascota y de comprobar los recordatorios.</li>
+    </ul>
+
+    <h2>5. Limitación de responsabilidad</h2>
+    <p>El servicio se presta «tal cual». En la medida razonablemente permitida, no somos responsables de:</p>
+    <ul>
+      <li>cualquier fallo, interrupción o pérdida de datos (especialmente si no has activado la copia de seguridad);</li>
+      <li>cualquier retraso o fallo de los recordatorios;</li>
+      <li>daños causados por terceros (p. ej., Google, fabricante del dispositivo).</li>
+    </ul>
+    <p>PetMediBook no sustituye el consejo veterinario. Tus derechos de consumidor obligatorios conforme a la ley aplicable no se ven afectados por lo anterior.</p>
+
+    <h2>6. Propiedad intelectual</h2>
+    <p>La aplicación, su código, su diseño y su marca pertenecen al desarrollador que opera bajo el nombre «EK Digital Apps». Los datos que introduces (información de mascotas, fotos, documentos) <strong>te pertenecen</strong>: no reclamamos ningún derecho sobre ellos.</p>
+
+    <h2>7. Cambios en el servicio y en las condiciones</h2>
+    <p>Podemos desarrollar y modificar el servicio y actualizar estas condiciones de vez en cuando. Indicaremos los cambios sustanciales en la aplicación o en esta página actualizando la fecha de «Última actualización».</p>
+
+    <h2>8. Ley aplicable y conflictos</h2>
+    <p>Estas condiciones se rigen por la ley húngara y las normas aplicables de la UE. En caso de conflicto, las partes buscarán primero una solución amistosa por correo electrónico. El consumidor también puede acudir a los tribunales de su lugar de residencia o al organismo de resolución correspondiente.</p>
+
+    <div class="contact">
+      <strong>Contacto</strong><br>
+      PetMediBook · EK Digital Apps<br>
+      <a href="mailto:petmedibookapp@gmail.com">petmedibookapp@gmail.com</a>
+    </div>
+  </section>
+
+  <!-- ===================== POLISH ===================== -->
+  <section class="lang" id="pl">
+    <h1>Warunki korzystania</h1>
+    <div class="eff">Obowiązuje od: 1 lipca 2026 &nbsp;·&nbsp; Ostatnia aktualizacja: 14 czerwca 2026</div>
+
+    <div class="lead">
+      <p>Witamy w PetMediBook! PetMediBook to aplikacja będąca dziennikiem zdrowia zwierząt. Instalując i używając aplikacji, akceptujesz niniejsze warunki. Prosimy o uważne zapoznanie się z nimi.</p>
+    </div>
+
+    <div class="notice">
+      <strong>Ważne:</strong> PetMediBook to narzędzie do prowadzenia rejestru i przypomnień. <strong>Nie zastępuje profesjonalnej porady weterynaryjnej, diagnozy ani leczenia.</strong> W razie problemu zdrowotnego zwierzęcia zawsze skonsultuj się z wykwalifikowanym lekarzem weterynarii.
+    </div>
+
+    <h2>1. Kto świadczy usługę</h2>
+    <p>Aplikacja jest prowadzona pod nazwą handlową <strong>„EK Digital Apps"</strong>. Kontakt: <a href="mailto:petmedibookapp@gmail.com">petmedibookapp@gmail.com</a>.</p>
+
+    <h2>2. Usługa</h2>
+    <p>PetMediBook umożliwia:</p>
+    <ul>
+      <li>prowadzenie rejestru danych zdrowotnych zwierząt (szczepienia, waga, dokumenty, notatki),</li>
+      <li>zarządzanie kontaktami weterynaryjnymi i wizytami,</li>
+      <li>ustawianie przypomnień zdrowotnych,</li>
+      <li>opcjonalną kopię zapasową danych na Twoim własnym Google Drive,</li>
+      <li>eksport podsumowania zdrowia do pliku PDF.</li>
+    </ul>
+    <p>Wprowadzane dane są przechowywane lokalnie na Twoim urządzeniu. Szczegóły znajdziesz w naszej <a href="privacy-hu.html">Polityce prywatności</a>, która stanowi integralną część niniejszych warunków.</p>
+
+    <h2>3. Okres wprowadzający i przyszłe Premium</h2>
+    <p>W chwili startu obowiązuje <strong>okres wprowadzający</strong>: w tym czasie wszystkie funkcje są dostępne <strong>bezpłatnie, bez subskrypcji i bez płatności</strong>.</p>
+    <p>W przyszłości możemy wprowadzić płatne funkcje <strong>Premium</strong>. Poinformujemy Cię o tym z wyprzedzeniem w aplikacji lub na tej stronie. Ewentualne płatne subskrypcje będą obsługiwane przez <strong>Google Play Billing</strong>: ceny są wyświetlane w sklepie Google Play, a odnawianie, anulowanie i zwroty podlegają aktualnym zasadom Google Play. Nigdy nie widzimy danych Twojej karty.</p>
+
+    <h2>4. Twoje obowiązki</h2>
+    <ul>
+      <li>Nie będziesz dokonywać inżynierii wstecznej, modyfikować ani używać aplikacji do celów niezgodnych z prawem lub szkodliwych.</li>
+      <li>Będziesz przestrzegać warunków sklepu Google Play.</li>
+      <li>Ostatecznie to Ty odpowiadasz za opiekę nad zwierzęciem i sprawdzanie przypomnień.</li>
+    </ul>
+
+    <h2>5. Ograniczenie odpowiedzialności</h2>
+    <p>Usługa jest udostępniana „tak jak jest". W rozsądnie dozwolonym zakresie nie ponosimy odpowiedzialności za:</p>
+    <ul>
+      <li>jakiekolwiek awarie, przerwy lub utratę danych (zwłaszcza jeśli nie włączyłeś kopii zapasowej);</li>
+      <li>jakiekolwiek opóźnienie lub brak przypomnień;</li>
+      <li>szkody spowodowane przez osoby trzecie (np. Google, producenta urządzenia).</li>
+    </ul>
+    <p>PetMediBook nie zastępuje porady weterynaryjnej. Twoje obowiązkowe prawa konsumenckie wynikające z obowiązującego prawa nie są ograniczone przez powyższe postanowienia.</p>
+
+    <h2>6. Własność intelektualna</h2>
+    <p>Aplikacja, jej kod, wygląd i marka należą do twórcy działającego pod nazwą „EK Digital Apps". Wprowadzane przez Ciebie dane (informacje o zwierzętach, zdjęcia, dokumenty) <strong>należą do Ciebie</strong> — nie rościmy sobie do nich żadnych praw.</p>
+
+    <h2>7. Zmiany usługi i warunków</h2>
+    <p>Możemy rozwijać i modyfikować usługę oraz od czasu do czasu aktualizować niniejsze warunki. Istotne zmiany zaznaczymy w aplikacji lub na tej stronie poprzez aktualizację daty „Ostatnia aktualizacja".</p>
+
+    <h2>8. Prawo właściwe i spory</h2>
+    <p>Niniejsze warunki podlegają prawu węgierskiemu i obowiązującym przepisom UE. W razie sporu strony najpierw dążą do polubownego rozwiązania drogą e-mailową. Konsument może również wytoczyć powództwo przed sądem swojego miejsca zamieszkania lub zwrócić się do właściwego organu polubownego.</p>
+
+    <div class="contact">
+      <strong>Kontakt</strong><br>
+      PetMediBook · EK Digital Apps<br>
+      <a href="mailto:petmedibookapp@gmail.com">petmedibookapp@gmail.com</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 EK Digital Apps · PetMediBook
+  </footer>
+
 </div>
 
-<div class="highlight">
-  <strong>Üdvözöljük a PetMediBookban!</strong> Mielőtt használatba veszi az alkalmazást, kérjük, olvassa el figyelmesen ezeket a feltételeket. A PetMediBook telepítésével és használatával Ön elfogadja az itt leírtakat.
-</div>
-
-<h2>1. A szolgáltató</h2>
-
-<p>
-  <strong>Név:</strong> Kéri Endre (magánszemély szoftverfejlesztő)<br>
-  <strong>Székhely:</strong> Dunakeszi, Magyarország<br>
-  <strong>Kapcsolat:</strong> <a href="mailto:petmedibookapp@gmail.com">petmedibookapp@gmail.com</a>
-</p>
-
-<h2>2. A szolgáltatás leírása</h2>
-
-<p>A PetMediBook egy Android-platformra fejlesztett mobilalkalmazás, amely lehetővé teszi a kisállattartók számára, hogy:</p>
-<ul>
-  <li>Kisállataik egészségügyi adatait (oltások, súly, dokumentumok) nyilvántartsák</li>
-  <li>Állatorvosi kontaktokat és időpontokat kezeljenek</li>
-  <li>Egészségügyi emlékeztetőket állítsanak be</li>
-  <li>Az adatok biztonsági mentését saját Google Drive-jukon végezhessék (opcionális)</li>
-  <li>Egészségügyi kivonatokat PDF-formátumban exportáljanak (Premium funkció)</li>
-</ul>
-
-<div class="warning">
-  <strong>Fontos:</strong> A PetMediBook egy <strong>nyilvántartási és emlékeztető eszköz</strong>. NEM helyettesíti az állatorvosi szakvéleményt, diagnózist vagy kezelést. Az alkalmazásban tárolt vagy javasolt információk nem minősülnek orvosi tanácsadásnak. Kisállata egészségügyi problémája esetén MINDIG forduljon szakképzett állatorvoshoz.
-</div>
-
-<h2>3. A szolgáltatás verziói</h2>
-
-<h3>3.1. Free verzió</h3>
-<p>Ingyenesen használható, az alábbi alapfunkciókat tartalmazza:</p>
-<ul>
-  <li>1 kisállat nyilvántartása</li>
-  <li>Oltási és súly-napló</li>
-  <li>Időpont-emlékeztetők</li>
-  <li>Állatorvosi kontaktok kezelése</li>
-  <li>Kisállatonként legfeljebb 5 orvosi dokumentum tárolása</li>
-</ul>
-
-<h3>3.2. Premium verzió (előfizetés)</h3>
-<p>Havi vagy éves előfizetéssel az alábbi kiegészítő funkciók érhetők el:</p>
-<ul>
-  <li>Korlátlan kisállat-nyilvántartás</li>
-  <li>Korlátlan dokumentumtárolás</li>
-  <li>Google Drive biztonsági mentés</li>
-  <li>PDF Export funkció állatorvosi megosztáshoz</li>
-  <li>Egyéni emlékeztető-időzítések</li>
-  <li>Jövőbeli Premium funkciókhoz való hozzáférés</li>
-</ul>
-
-<h3>3.3. Free Trial (ingyenes próbaidőszak)</h3>
-<p>Új felhasználók 7 napos ingyenes próbaidőszakot kapnak a Premium funkciókhoz. A próbaidő alatt:</p>
-<ul>
-  <li>Hozzáférés minden Premium funkcióhoz, ingyen</li>
-  <li>Bármikor lemondható büntetés nélkül</li>
-  <li>Ha nem mondja le a próbaidő lejárta előtt, az előfizetés automatikusan megkezdődik</li>
-  <li>A próbaidőszakhoz hitelkártya megadása szükséges a Google Play szabályai szerint</li>
-</ul>
-
-<h2>4. Az előfizetés feltételei</h2>
-
-<h3>4.1. Árazás</h3>
-<p>Az aktuális előfizetési árak a Google Play Store adatlapunkon érhetők el. Az árak régiónként és pénznemenként eltérhetnek.</p>
-
-<h3>4.2. Fizetési mód</h3>
-<p>Minden fizetést a <strong>Google Play Billing</strong> rendszere kezeli. Mi soha nem férünk hozzá az Ön bankkártya- vagy banki adataihoz.</p>
-
-<h3>4.3. Megújulás</h3>
-<p>Az előfizetés automatikusan megújul a választott időszak (havi/éves) végén, kivéve, ha legalább 24 órával a megújulás előtt lemondja a Google Play Subscriptions menüpontban.</p>
-
-<h3>4.4. Lemondás</h3>
-<p>Az előfizetés bármikor lemondható a Google Play > Előfizetések menüpontban. A lemondás azonnal érvénybe lép a megújulási dátumra; addig a Premium funkciók elérhetők maradnak.</p>
-
-<h3>4.5. Visszatérítés</h3>
-<p>A visszatérítéseket a <a href="https://support.google.com/googleplay/answer/2479637" target="_blank">Google Play visszatérítési szabályai</a> kezelik:</p>
-<ul>
-  <li>Vásárlás után 48 órán belül általában teljes visszatérítés lehetséges</li>
-  <li>Ezt követően a Google diszkrecionálisan dönt</li>
-  <li>A free trial alatti lemondás automatikusan ingyenes, díj nem kerül felszámításra</li>
-</ul>
-
-<h3>4.6. Árváltozás</h3>
-<p>Az előfizetési árakat a jövőben módosíthatjuk. Az árváltozást legalább 30 nappal a hatálybalépés előtt értesítjük Önnek e-mailben és/vagy az alkalmazáson belül. Ha nem fogadja el az új árat, az előfizetése lemondható.</p>
-
-<h2>5. Felhasználói magatartás</h2>
-
-<p>Az alkalmazás használata során Ön vállalja, hogy:</p>
-<ul>
-  <li>Nem próbálja meg visszafejteni, módosítani vagy hackelni az alkalmazást</li>
-  <li>Nem használja a szolgáltatást jogellenes vagy károkozó célra</li>
-  <li>Nem oszt meg az alkalmazásból bizonyos tartalmakat, amelyek mások szellemi tulajdonát sértik</li>
-  <li>Tiszteletben tartja a Google Play Store használati feltételeit</li>
-</ul>
-
-<h2>6. Felelősség korlátozása</h2>
-
-<div class="warning">
-  <strong>Fontos felelősségi nyilatkozat:</strong>
-</div>
-
-<p>A PetMediBook szolgáltatás "úgy, ahogy van" alapon kerül biztosításra. Az adatkezelő:</p>
-<ul>
-  <li>NEM garantálja a szolgáltatás zavartalan, hibamentes működését</li>
-  <li>NEM vállal felelősséget az alkalmazás technikai meghibásodásából eredő adatvesztésért (különösen, ha a felhasználó NEM aktiválta a Google Drive biztonsági mentést)</li>
-  <li>NEM helyettesít szakképzett állatorvosi tanácsadást, diagnózist vagy kezelést</li>
-  <li>NEM vállal felelősséget az alkalmazás által nyújtott emlékeztetők esetleges hibájáért vagy kimaradásáért — végső soron a felhasználó felelőssége a kisállatának egészségügyi ellátása</li>
-  <li>NEM vállal felelősséget harmadik felek (Google, állatorvos, eszközgyártó) hibájából eredő károkért</li>
-</ul>
-
-<p>A magyar fogyasztóvédelmi jog kötelező rendelkezéseit a fenti korlátozások nem érintik.</p>
-
-<h2>7. Szellemi tulajdon</h2>
-
-<p>A PetMediBook alkalmazás, annak design-ja, kódja, márkaneve és minden tartalmi eleme a fejlesztő (Kéri Endre) tulajdonát képezi. Az alkalmazás használata nem ruház át semmilyen szellemi tulajdonjogot.</p>
-
-<p>Az Ön által rögzített adatok (kisállat-információk, fényképek, dokumentumok stb.) <strong>az Ön tulajdonát képezik</strong>. Mi semmilyen jogot nem gyakorlunk az Ön adatai felett.</p>
-
-<h2>8. A szolgáltatás módosítása vagy megszüntetése</h2>
-
-<p>A fejlesztő fenntartja a jogot, hogy:</p>
-<ul>
-  <li>A szolgáltatást frissítse, módosítsa, vagy új funkciókkal bővítse</li>
-  <li>Egyes funkciókat megszüntessen, megfelelő előzetes értesítéssel</li>
-  <li>A szolgáltatás nyújtását teljes mértékben megszüntesse, az előfizetők részére prorata visszatérítés mellett, legalább 60 napos előzetes értesítéssel</li>
-</ul>
-
-<h2>9. Adatvédelem</h2>
-
-<p>Az Ön adatainak kezelésére vonatkozó részletes szabályokat az <a href="privacy_policy_hu.html">Adatvédelmi tájékoztató</a> tartalmazza, amely jelen Felhasználási feltételek elválaszthatatlan részét képezi.</p>
-
-<h2>10. Vis maior</h2>
-
-<p>A fejlesztő nem felel a szolgáltatás zavarából eredő károkért, ha azt rajta kívül álló okok (pl. internet-szolgáltatás kimaradása, Google-platform meghibásodása, természeti katasztrófa, jogszabályváltozás) okozzák.</p>
-
-<h2>11. A feltételek módosítása</h2>
-
-<p>A jelen Felhasználási feltételeket a fejlesztő egyoldalúan módosíthatja. A módosításokról legalább 30 nappal a hatálybalépés előtt értesítjük az Ön regisztrált felhasználói felületén keresztül. Lényeges változás esetén az Ön kifejezett, új elfogadását kérjük.</p>
-
-<h2>12. Joghatóság, jogvita rendezése</h2>
-
-<p>A jelen Felhasználási feltételekre a <strong>magyar jog</strong> alkalmazandó. Jogvita esetén:</p>
-<ul>
-  <li>A felek elsősorban e-mailen keresztül próbálják meg egyezséggel rendezni a vitát</li>
-  <li>Békés úton való rendezés sikertelensége esetén a hatáskörrel rendelkező magyar bíróság illetékes</li>
-  <li>Fogyasztó esetén a fogyasztó lakóhelye szerinti bíróság is eljárhat</li>
-  <li>Fogyasztói vitarendezésre: Pest Vármegyei Békéltető Testület (Budapest, 1119 Budapest, Etele út 59-61.)</li>
-</ul>
-
-<h2>13. Záró rendelkezések</h2>
-
-<p>Amennyiben a jelen feltételek bármely rendelkezése érvénytelennek vagy alkalmazhatatlannak bizonyul, az nem érinti a többi rendelkezés érvényességét. A felek a hibás rendelkezést annak gazdasági céljához legközelebb álló érvényes rendelkezéssel pótolják.</p>
-
-<p>A jelen Felhasználási feltételek a Hatálybalépési időponttól (2026. május 22.) hatályosak.</p>
-
-<div class="footer">
-  <p><strong>Kapcsolat:</strong> Kérdés vagy észrevétel esetén forduljon hozzánk a <a href="mailto:petmedibookapp@gmail.com">petmedibookapp@gmail.com</a> címen.</p>
-  <p><em>Verzió 1.0 — PetMediBook Android-alkalmazás. Hatályos: 2026. május 22-től.</em></p>
-</div>
-
+<script>
+  (function(){
+    var supported = ["hu","en","de","es","pl"];
+    var bar = document.getElementById('langbar');
+    var buttons = bar.querySelectorAll('button');
+    var sections = document.querySelectorAll('.lang');
+    function setLang(lang){
+      buttons.forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang')===lang); });
+      sections.forEach(function(s){ s.classList.toggle('show', s.id===lang); });
+      document.documentElement.lang = lang;
+    }
+    bar.addEventListener('click', function(e){
+      var btn = e.target.closest('button');
+      if(!btn) return;
+      setLang(btn.getAttribute('data-lang'));
+      window.scrollTo(0,0);
+    });
+    // A böngésző/eszköz nyelvének automatikus felismerése betöltéskor
+    var nav = (navigator.language || "hu").slice(0,2).toLowerCase();
+    if(supported.indexOf(nav) !== -1){ setLang(nav); }
+  })();
+</script>
 </body>
 </html>
