@@ -3,198 +3,437 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Adatvédelmi tájékoztató — PetMediBook</title>
+<title>PetMediBook — Adatkezelési tájékoztató / Privacy Policy</title>
 <style>
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    color: #191C19;
-    background: #FBFDF9;
+  :root{
+    --ink:#14201a;
+    --muted:#5c6b63;
+    --line:#dfe6e1;
+    --bg:#f7faf8;
+    --card:#ffffff;
+    --accent:#1b5e20;
+    --accent-soft:#e6f0e8;
   }
-  h1 { color: #2E7D5B; border-bottom: 2px solid #2E7D5B; padding-bottom: 10px; }
-  h2 { color: #2E7D5B; margin-top: 30px; }
-  h3 { color: #414941; margin-top: 20px; }
-  a { color: #2E7D5B; }
-  .meta { color: #414941; font-size: 14px; margin-bottom: 30px; }
-  .highlight { background: #D8E7DB; padding: 12px; border-radius: 8px; margin: 16px 0; }
-  ul { padding-left: 24px; }
-  li { margin: 6px 0; }
-  .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #D8E7DB; color: #414941; font-size: 14px; }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.65;
+    font-size:17px;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:32px 22px 80px;}
+  header.top{
+    display:flex;align-items:center;gap:12px;
+    padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:8px;
+  }
+  .logo{
+    width:42px;height:42px;border-radius:11px;flex:none;
+    background:var(--accent);position:relative;
+  }
+  .logo::before{
+    content:"";position:absolute;inset:0;margin:auto;width:18px;height:16px;
+    background:#81c784;
+    clip-path:path("M9 16C9 16 0 10 0 4.5C0 1.8 2 0 4.2 0C6 0 7.6 1.2 9 3C10.4 1.2 12 0 13.8 0C16 0 18 1.8 18 4.5C18 10 9 16 9 16Z");
+    top:13px;
+  }
+  .brandname{font-weight:700;font-size:18px;letter-spacing:-.2px;}
+  .brandsub{color:var(--muted);font-size:13px;}
+  nav.langbar{
+    display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 6px;
+  }
+  nav.langbar button{
+    font:inherit;font-size:13px;font-weight:600;
+    border:1px solid var(--line);background:var(--card);color:var(--muted);
+    padding:6px 13px;border-radius:999px;cursor:pointer;transition:.15s;
+  }
+  nav.langbar button:hover{border-color:var(--accent);color:var(--accent);}
+  nav.langbar button.active{background:var(--accent);border-color:var(--accent);color:#fff;}
+  h1{font-size:25px;letter-spacing:-.4px;margin:26px 0 4px;}
+  .eff{color:var(--muted);font-size:14px;margin-bottom:26px;}
+  h2{
+    font-size:18px;margin:34px 0 8px;letter-spacing:-.2px;
+    padding-top:18px;border-top:1px solid var(--line);
+  }
+  h2:first-of-type{border-top:none;padding-top:0;}
+  p{margin:10px 0;}
+  ul{margin:10px 0;padding-left:22px;}
+  li{margin:5px 0;}
+  .lead{
+    background:var(--accent-soft);border:1px solid var(--line);
+    border-radius:12px;padding:16px 18px;margin:18px 0 8px;color:var(--ink);
+  }
+  .lead p{margin:6px 0;}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px;}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{color:var(--accent);font-size:13px;text-transform:uppercase;letter-spacing:.04em;}
+  a{color:var(--accent);}
+  .contact{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:16px 18px;margin:18px 0;
+  }
+  .lang{display:none;}
+  .lang.show{display:block;}
+  footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;}
+  @media (max-width:520px){
+    body{font-size:16px;}
+    h1{font-size:22px;}
+  }
 </style>
 </head>
 <body>
+<div class="wrap">
 
-<h1>Adatvédelmi tájékoztató</h1>
+  <header class="top">
+    <div class="logo"></div>
+    <div>
+      <div class="brandname">PetMediBook</div>
+      <div class="brandsub">EK Digital Apps</div>
+    </div>
+  </header>
 
-<div class="meta">
-  <strong>PetMediBook Android-alkalmazás</strong><br>
-  Hatályos: 2026. május 22-től<br>
-  Verzió: 1.0
+  <nav class="langbar" id="langbar">
+    <button data-lang="hu" class="active">Magyar</button>
+    <button data-lang="en">English</button>
+    <button data-lang="de">Deutsch</button>
+    <button data-lang="es">Español</button>
+    <button data-lang="pl">Polski</button>
+  </nav>
+
+  <!-- ===================== HUNGARIAN ===================== -->
+  <section class="lang show" id="hu">
+    <h1>Adatkezelési tájékoztató</h1>
+    <div class="eff">Hatályos: 2026. július 1. &nbsp;·&nbsp; Utolsó frissítés: 2026. június 14.</div>
+
+    <div class="lead">
+      <p>A PetMediBook egy kisállat-egészségügyi napló alkalmazás. A kisállataid adatait (profilok, oltások, súly, dokumentumok, fényképek) <strong>az eszközödön, helyben tároljuk</strong> — ezeket nem küldjük el magunknak. Az alkalmazás működéséhez és fejlesztéséhez korlátozott, többségében anonim használati adatot gyűjtünk a Google Firebase szolgáltatásán keresztül. Ez a tájékoztató ezt mutatja be.</p>
+    </div>
+
+    <h2>1. Az adatkezelő</h2>
+    <p>Az alkalmazást az <strong>„EK Digital Apps"</strong> működési néven üzemeltetjük. Adatvédelmi kérdésekben a kapcsolattartás e-mailen történik:</p>
+    <p><a href="mailto:petmedibookapp@gmail.com">petmedibookapp@gmail.com</a></p>
+
+    <h2>2. Milyen adatokat kezelünk és miért</h2>
+
+    <p><strong>a) Az eszközön, helyben tárolt adatok (ezeket nem gyűjtjük be)</strong></p>
+    <p>Az általad rögzített kisállat-adatok — név, faj, fajta, születési dátum, chipszám, oltási és súlyadatok, jegyzetek, valamint a feltöltött dokumentumok és fényképek — kizárólag a készülékeden, az alkalmazás belső tárhelyén tárolódnak. Ezekhez nem férünk hozzá, és nem továbbítjuk őket.</p>
+
+    <p><strong>b) Használati és diagnosztikai adatok (Google Firebase Analytics)</strong></p>
+    <p>Az alkalmazás használatának megértéséhez és javításához a Google Firebase Analytics szolgáltatást használjuk. Ennek keretében az alábbiak kezelődnek: alkalmazás-használati események (pl. mely képernyők nyílnak meg), alkalmazás-példányazonosító, hozzávetőleges (IP-cím alapú) földrajzi hely ország/régió szinten, valamint eszköz- és rendszerinformáció (eszköztípus, operációs rendszer verziója, nyelvi beállítás). Ezek az adatok többségében anonimak, és nem alkalmasak a személyazonosságod közvetlen megállapítására.</p>
+
+    <p><strong>c) Távoli konfiguráció (Google Firebase Remote Config)</strong></p>
+    <p>Az alkalmazás működési beállításait (pl. a bevezetési időszak állapota) távolról frissítjük. Ehhez az alkalmazás beállításokat tölt le a szerverről; ez nem jár személyes adat gyűjtésével.</p>
+
+    <p><strong>d) Google Drive biztonsági mentés (opcionális, te indítod)</strong></p>
+    <p>Ha bekapcsolod a Google Drive mentést, az alkalmazás a kisállat-adataidat a <strong>saját Google Drive-fiókod</strong> rejtett, privát mappájába menti. Ehhez a mappához kizárólag a PetMediBook fér hozzá. Ezeket az adatokat mi nem látjuk és nem tároljuk — a saját felhőtárhelyeden maradnak.</p>
+
+    <h2>3. Az adatkezelés jogalapja</h2>
+    <p>A használati és diagnosztikai adatok kezelésének jogalapja a GDPR 6. cikk (1) f) pontja szerinti <strong>jogos érdek</strong> (az alkalmazás stabil működésének biztosítása és fejlesztése), illetve – ahol a jogszabály ezt megkívánja – a <strong>hozzájárulásod</strong>. Az eszközödön tárolt kisállat-adatok kezelése a te közvetlen utasításodra, az alkalmazás funkciójának nyújtása érdekében történik.</p>
+
+    <h2>4. Adattovábbítás és adatfeldolgozók</h2>
+    <p>A használati adatokat a <strong>Google Ireland Limited / Google LLC</strong> (Firebase) mint adatfeldolgozó kezeli a nevünkben. A Google az adatokat az Európai Unión kívül (pl. az Egyesült Államokban) is feldolgozhatja; ezt a Google a szabványos adatvédelmi szerződéses klauzulák (SCC) és a vonatkozó adatvédelmi keretrendszerek alapján biztosítja. A Google adatkezeléséről: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+    <p>Az adataidat nem adjuk el, és nem továbbítjuk hirdetési célból harmadik feleknek.</p>
+
+    <h2>5. Engedélyek, amelyeket az alkalmazás kérhet</h2>
+    <ul>
+      <li><strong>Kamera</strong> – dokumentumok és fényképek készítéséhez.</li>
+      <li><strong>Fotók / média</strong> – meglévő képek kiválasztásához a galériából.</li>
+      <li><strong>Értesítések</strong> – oltási és egyéb emlékeztetők megjelenítéséhez.</li>
+      <li><strong>Indítás utáni futtatás</strong> – a beállított emlékeztetők újraütemezéséhez a készülék újraindítása után.</li>
+    </ul>
+
+    <h2>6. Adatmegőrzés</h2>
+    <p>Az eszközön tárolt adatok addig maradnak meg, amíg te nem törlöd őket az alkalmazásból, vagy el nem távolítod az alkalmazást. A Firebase Analytics használati adatait a Google a saját megőrzési szabályai szerint tárolja (alapértelmezetten korlátozott ideig).</p>
+
+    <h2>7. A te jogaid</h2>
+    <p>A GDPR alapján jogosult vagy a rád vonatkozó adatokhoz való hozzáférésre, azok helyesbítésére, törlésére, az adatkezelés korlátozására és az adathordozhatóságra, valamint tiltakozhatsz az adatkezelés ellen. Az eszközödön tárolt adatokat bármikor közvetlenül törölheted az alkalmazásban. Kérdés vagy kérés esetén írj a fenti e-mail-címre. Panasszal a Nemzeti Adatvédelmi és Információszabadság Hatósághoz (NAIH) fordulhatsz.</p>
+
+    <h2>8. Gyermekek</h2>
+    <p>Az alkalmazás nem gyermekeknek készült, és nem gyűjt tudatosan 16 éven aluli személyekre vonatkozó adatot.</p>
+
+    <h2>9. A tájékoztató módosítása</h2>
+    <p>A tájékoztatót időről időre frissíthetjük. A lényeges változásokról az alkalmazásban vagy ezen az oldalon adunk tájékoztatást, a fenti „Utolsó frissítés" dátum módosításával.</p>
+
+    <div class="contact">
+      <strong>Kapcsolat</strong><br>
+      PetMediBook · EK Digital Apps<br>
+      <a href="mailto:petmedibookapp@gmail.com">petmedibookapp@gmail.com</a>
+    </div>
+  </section>
+
+  <!-- ===================== ENGLISH ===================== -->
+  <section class="lang" id="en">
+    <h1>Privacy Policy</h1>
+    <div class="eff">Effective: 1 July 2026 &nbsp;·&nbsp; Last updated: 14 June 2026</div>
+
+    <div class="lead">
+      <p>PetMediBook is a pet health journal app. Your pets' data (profiles, vaccinations, weight, documents, photos) is <strong>stored locally on your device</strong> — we do not send it to ourselves. To operate and improve the app, we collect a limited amount of mostly anonymous usage data through Google Firebase. This policy explains what we collect and why.</p>
+    </div>
+
+    <h2>1. Who we are</h2>
+    <p>The app is operated under the trading name <strong>"EK Digital Apps"</strong>. For privacy matters, contact us by email:</p>
+    <p><a href="mailto:petmedibookapp@gmail.com">petmedibookapp@gmail.com</a></p>
+
+    <h2>2. What we process and why</h2>
+
+    <p><strong>a) Data stored locally on your device (not collected by us)</strong></p>
+    <p>The pet data you enter — name, species, breed, date of birth, chip number, vaccination and weight records, notes, and any documents or photos you upload — is stored only on your device, in the app's internal storage. We do not access or transmit it.</p>
+
+    <p><strong>b) Usage and diagnostic data (Google Firebase Analytics)</strong></p>
+    <p>To understand and improve how the app is used, we use Google Firebase Analytics. This processes: app usage events (e.g. which screens are opened), an app instance identifier, approximate (IP-based) location at country/region level, and device and system information (device type, OS version, language setting). This data is mostly anonymous and does not directly identify you.</p>
+
+    <p><strong>c) Remote configuration (Google Firebase Remote Config)</strong></p>
+    <p>We update certain app settings remotely (e.g. the status of the introductory period). The app downloads configuration from the server; this does not involve collecting personal data.</p>
+
+    <p><strong>d) Google Drive backup (optional, initiated by you)</strong></p>
+    <p>If you enable Google Drive backup, the app saves your pet data to a hidden, private folder in <strong>your own Google Drive account</strong>. Only PetMediBook can access that folder. We do not see or store this data — it remains in your own cloud storage.</p>
+
+    <h2>3. Legal basis</h2>
+    <p>Usage and diagnostic data is processed on the basis of our <strong>legitimate interest</strong> (GDPR Art. 6(1)(f)) in keeping the app stable and improving it, and — where required by law — on the basis of your <strong>consent</strong>. The pet data on your device is processed at your direction, to provide the app's functionality.</p>
+
+    <h2>4. Data sharing and processors</h2>
+    <p>Usage data is processed on our behalf by <strong>Google Ireland Limited / Google LLC</strong> (Firebase) as our processor. Google may process data outside the European Union (e.g. in the United States) under Standard Contractual Clauses (SCCs) and applicable data protection frameworks. See Google's privacy policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+    <p>We do not sell your data or share it with third parties for advertising.</p>
+
+    <h2>5. Permissions the app may request</h2>
+    <ul>
+      <li><strong>Camera</strong> – to take photos of documents.</li>
+      <li><strong>Photos / media</strong> – to select existing images from your gallery.</li>
+      <li><strong>Notifications</strong> – to show vaccination and other reminders.</li>
+      <li><strong>Run after restart</strong> – to reschedule your reminders after the device reboots.</li>
+    </ul>
+
+    <h2>6. Data retention</h2>
+    <p>Data stored on your device remains until you delete it in the app or uninstall the app. Firebase Analytics usage data is retained by Google according to its own retention settings (a limited period by default).</p>
+
+    <h2>7. Your rights</h2>
+    <p>Under the GDPR you have the right to access, rectify, erase, restrict and port your data, and to object to processing. You can delete the data on your device at any time directly in the app. For any request, email the address above. You also have the right to lodge a complaint with your local data protection authority.</p>
+
+    <h2>8. Children</h2>
+    <p>The app is not directed at children and does not knowingly collect data relating to anyone under the age of 16.</p>
+
+    <h2>9. Changes to this policy</h2>
+    <p>We may update this policy from time to time. We will indicate material changes in the app or on this page by updating the "Last updated" date above.</p>
+
+    <div class="contact">
+      <strong>Contact</strong><br>
+      PetMediBook · EK Digital Apps<br>
+      <a href="mailto:petmedibookapp@gmail.com">petmedibookapp@gmail.com</a>
+    </div>
+  </section>
+
+  <!-- ===================== GERMAN ===================== -->
+  <section class="lang" id="de">
+    <h1>Datenschutzerklärung</h1>
+    <div class="eff">Gültig ab: 1. Juli 2026 &nbsp;·&nbsp; Zuletzt aktualisiert: 14. Juni 2026</div>
+
+    <div class="lead">
+      <p>PetMediBook ist eine App als Gesundheitstagebuch für Haustiere. Die Daten deiner Tiere (Profile, Impfungen, Gewicht, Dokumente, Fotos) werden <strong>lokal auf deinem Gerät gespeichert</strong> — wir senden sie nicht an uns. Zum Betrieb und zur Verbesserung der App erheben wir über Google Firebase eine begrenzte Menge überwiegend anonymer Nutzungsdaten. Diese Erklärung beschreibt, was wir verarbeiten und warum.</p>
+    </div>
+
+    <h2>1. Verantwortlicher</h2>
+    <p>Die App wird unter dem Geschäftsnamen <strong>„EK Digital Apps"</strong> betrieben. In Datenschutzfragen erreichst du uns per E-Mail:</p>
+    <p><a href="mailto:petmedibookapp@gmail.com">petmedibookapp@gmail.com</a></p>
+
+    <h2>2. Welche Daten wir verarbeiten und warum</h2>
+
+    <p><strong>a) Lokal auf deinem Gerät gespeicherte Daten (von uns nicht erhoben)</strong></p>
+    <p>Die von dir eingegebenen Tierdaten — Name, Art, Rasse, Geburtsdatum, Chipnummer, Impf- und Gewichtsdaten, Notizen sowie hochgeladene Dokumente und Fotos — werden ausschließlich auf deinem Gerät im internen Speicher der App abgelegt. Wir greifen nicht darauf zu und übermitteln sie nicht.</p>
+
+    <p><strong>b) Nutzungs- und Diagnosedaten (Google Firebase Analytics)</strong></p>
+    <p>Um die Nutzung der App zu verstehen und zu verbessern, setzen wir Google Firebase Analytics ein. Dabei werden verarbeitet: Nutzungsereignisse (z. B. welche Bildschirme geöffnet werden), eine App-Instanz-Kennung, ein ungefährer (IP-basierter) Standort auf Land-/Regionsebene sowie Geräte- und Systeminformationen (Gerätetyp, Betriebssystemversion, Spracheinstellung). Diese Daten sind überwiegend anonym und identifizieren dich nicht unmittelbar.</p>
+
+    <p><strong>c) Remote-Konfiguration (Google Firebase Remote Config)</strong></p>
+    <p>Bestimmte Einstellungen der App (z. B. der Status des Einführungszeitraums) werden aus der Ferne aktualisiert. Die App lädt dazu eine Konfiguration vom Server; eine Erhebung personenbezogener Daten erfolgt dabei nicht.</p>
+
+    <p><strong>d) Google-Drive-Backup (optional, von dir ausgelöst)</strong></p>
+    <p>Wenn du das Google-Drive-Backup aktivierst, speichert die App deine Tierdaten in einem versteckten, privaten Ordner deines <strong>eigenen Google-Drive-Kontos</strong>. Nur PetMediBook kann auf diesen Ordner zugreifen. Wir sehen oder speichern diese Daten nicht — sie verbleiben in deinem eigenen Cloud-Speicher.</p>
+
+    <h2>3. Rechtsgrundlage</h2>
+    <p>Nutzungs- und Diagnosedaten werden auf Grundlage unseres <strong>berechtigten Interesses</strong> (Art. 6 Abs. 1 lit. f DSGVO) am stabilen Betrieb und an der Verbesserung der App verarbeitet sowie — soweit gesetzlich erforderlich — auf Grundlage deiner <strong>Einwilligung</strong>. Die Tierdaten auf deinem Gerät werden auf deine Veranlassung zur Bereitstellung der App-Funktionen verarbeitet.</p>
+
+    <h2>4. Weitergabe und Auftragsverarbeiter</h2>
+    <p>Nutzungsdaten werden in unserem Auftrag von <strong>Google Ireland Limited / Google LLC</strong> (Firebase) als Auftragsverarbeiter verarbeitet. Google kann Daten außerhalb der Europäischen Union (z. B. in den USA) auf Grundlage der Standardvertragsklauseln (SCC) und einschlägiger Datenschutzrahmen verarbeiten. Siehe die Datenschutzerklärung von Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+    <p>Wir verkaufen deine Daten nicht und geben sie nicht zu Werbezwecken an Dritte weiter.</p>
+
+    <h2>5. Berechtigungen, die die App anfordern kann</h2>
+    <ul>
+      <li><strong>Kamera</strong> – zum Fotografieren von Dokumenten.</li>
+      <li><strong>Fotos / Medien</strong> – zur Auswahl vorhandener Bilder aus der Galerie.</li>
+      <li><strong>Benachrichtigungen</strong> – zur Anzeige von Impf- und sonstigen Erinnerungen.</li>
+      <li><strong>Ausführung nach Neustart</strong> – um deine Erinnerungen nach einem Geräteneustart neu zu planen.</li>
+    </ul>
+
+    <h2>6. Speicherdauer</h2>
+    <p>Auf deinem Gerät gespeicherte Daten bleiben erhalten, bis du sie in der App löschst oder die App deinstallierst. Firebase-Analytics-Nutzungsdaten werden von Google gemäß dessen eigenen Aufbewahrungseinstellungen gespeichert (standardmäßig für einen begrenzten Zeitraum).</p>
+
+    <h2>7. Deine Rechte</h2>
+    <p>Nach der DSGVO hast du das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung und Übertragbarkeit deiner Daten sowie auf Widerspruch gegen die Verarbeitung. Die Daten auf deinem Gerät kannst du jederzeit direkt in der App löschen. Für Anfragen schreibe an die oben genannte Adresse. Du hast zudem das Recht, dich bei deiner zuständigen Datenschutzbehörde zu beschweren.</p>
+
+    <h2>8. Kinder</h2>
+    <p>Die App richtet sich nicht an Kinder und erhebt nicht wissentlich Daten von Personen unter 16 Jahren.</p>
+
+    <h2>9. Änderungen dieser Erklärung</h2>
+    <p>Wir können diese Erklärung von Zeit zu Zeit aktualisieren. Wesentliche Änderungen kennzeichnen wir in der App oder auf dieser Seite durch Aktualisierung des Datums „Zuletzt aktualisiert" oben.</p>
+
+    <div class="contact">
+      <strong>Kontakt</strong><br>
+      PetMediBook · EK Digital Apps<br>
+      <a href="mailto:petmedibookapp@gmail.com">petmedibookapp@gmail.com</a>
+    </div>
+  </section>
+
+  <!-- ===================== SPANISH ===================== -->
+  <section class="lang" id="es">
+    <h1>Política de privacidad</h1>
+    <div class="eff">En vigor: 1 de julio de 2026 &nbsp;·&nbsp; Última actualización: 14 de junio de 2026</div>
+
+    <div class="lead">
+      <p>PetMediBook es una aplicación de diario de salud para mascotas. Los datos de tus mascotas (perfiles, vacunas, peso, documentos, fotos) se <strong>almacenan localmente en tu dispositivo</strong>: no nos los enviamos a nosotros. Para operar y mejorar la aplicación, recopilamos una cantidad limitada de datos de uso, en su mayoría anónimos, a través de Google Firebase. Esta política explica qué tratamos y por qué.</p>
+    </div>
+
+    <h2>1. Quiénes somos</h2>
+    <p>La aplicación se opera bajo el nombre comercial <strong>«EK Digital Apps»</strong>. Para cuestiones de privacidad, contáctanos por correo electrónico:</p>
+    <p><a href="mailto:petmedibookapp@gmail.com">petmedibookapp@gmail.com</a></p>
+
+    <h2>2. Qué tratamos y por qué</h2>
+
+    <p><strong>a) Datos almacenados localmente en tu dispositivo (no recopilados por nosotros)</strong></p>
+    <p>Los datos de mascota que introduces —nombre, especie, raza, fecha de nacimiento, número de chip, registros de vacunación y peso, notas, y cualquier documento o foto que subas— se guardan solo en tu dispositivo, en el almacenamiento interno de la aplicación. No accedemos a ellos ni los transmitimos.</p>
+
+    <p><strong>b) Datos de uso y diagnóstico (Google Firebase Analytics)</strong></p>
+    <p>Para entender y mejorar cómo se usa la aplicación, utilizamos Google Firebase Analytics. Esto trata: eventos de uso (p. ej., qué pantallas se abren), un identificador de instancia de la aplicación, una ubicación aproximada (basada en IP) a nivel de país/región, e información del dispositivo y del sistema (tipo de dispositivo, versión del sistema operativo, configuración de idioma). Estos datos son en su mayoría anónimos y no te identifican directamente.</p>
+
+    <p><strong>c) Configuración remota (Google Firebase Remote Config)</strong></p>
+    <p>Actualizamos ciertos ajustes de la aplicación de forma remota (p. ej., el estado del periodo de introducción). La aplicación descarga la configuración del servidor; esto no implica la recopilación de datos personales.</p>
+
+    <p><strong>d) Copia de seguridad en Google Drive (opcional, iniciada por ti)</strong></p>
+    <p>Si activas la copia de seguridad en Google Drive, la aplicación guarda los datos de tus mascotas en una carpeta oculta y privada de <strong>tu propia cuenta de Google Drive</strong>. Solo PetMediBook puede acceder a esa carpeta. No vemos ni almacenamos estos datos: permanecen en tu propio almacenamiento en la nube.</p>
+
+    <h2>3. Base jurídica</h2>
+    <p>Los datos de uso y diagnóstico se tratan sobre la base de nuestro <strong>interés legítimo</strong> (art. 6.1.f del RGPD) en mantener la aplicación estable y mejorarla y —cuando la ley lo exige— sobre la base de tu <strong>consentimiento</strong>. Los datos de mascota de tu dispositivo se tratan siguiendo tus instrucciones, para prestar la funcionalidad de la aplicación.</p>
+
+    <h2>4. Comunicación de datos y encargados</h2>
+    <p>Los datos de uso son tratados por cuenta nuestra por <strong>Google Ireland Limited / Google LLC</strong> (Firebase) como encargado del tratamiento. Google puede tratar los datos fuera de la Unión Europea (p. ej., en EE. UU.) en virtud de las Cláusulas Contractuales Tipo (CCT) y los marcos de protección de datos aplicables. Consulta la política de privacidad de Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+    <p>No vendemos tus datos ni los compartimos con terceros con fines publicitarios.</p>
+
+    <h2>5. Permisos que la aplicación puede solicitar</h2>
+    <ul>
+      <li><strong>Cámara</strong>: para tomar fotos de documentos.</li>
+      <li><strong>Fotos / multimedia</strong>: para seleccionar imágenes existentes de tu galería.</li>
+      <li><strong>Notificaciones</strong>: para mostrar recordatorios de vacunación y otros.</li>
+      <li><strong>Ejecución tras reinicio</strong>: para reprogramar tus recordatorios después de reiniciar el dispositivo.</li>
+    </ul>
+
+    <h2>6. Conservación de los datos</h2>
+    <p>Los datos almacenados en tu dispositivo permanecen hasta que los eliminas en la aplicación o desinstalas la aplicación. Google conserva los datos de uso de Firebase Analytics según sus propios ajustes de conservación (un periodo limitado de forma predeterminada).</p>
+
+    <h2>7. Tus derechos</h2>
+    <p>Conforme al RGPD, tienes derecho a acceder, rectificar, suprimir, limitar y portar tus datos, así como a oponerte al tratamiento. Puedes eliminar los datos de tu dispositivo en cualquier momento directamente en la aplicación. Para cualquier solicitud, escribe a la dirección indicada. También tienes derecho a presentar una reclamación ante tu autoridad de protección de datos.</p>
+
+    <h2>8. Menores</h2>
+    <p>La aplicación no está dirigida a menores y no recopila conscientemente datos de personas menores de 16 años.</p>
+
+    <h2>9. Cambios en esta política</h2>
+    <p>Podemos actualizar esta política de vez en cuando. Indicaremos los cambios sustanciales en la aplicación o en esta página actualizando la fecha de «Última actualización» de arriba.</p>
+
+    <div class="contact">
+      <strong>Contacto</strong><br>
+      PetMediBook · EK Digital Apps<br>
+      <a href="mailto:petmedibookapp@gmail.com">petmedibookapp@gmail.com</a>
+    </div>
+  </section>
+
+  <!-- ===================== POLISH ===================== -->
+  <section class="lang" id="pl">
+    <h1>Polityka prywatności</h1>
+    <div class="eff">Obowiązuje od: 1 lipca 2026 &nbsp;·&nbsp; Ostatnia aktualizacja: 14 czerwca 2026</div>
+
+    <div class="lead">
+      <p>PetMediBook to aplikacja będąca dziennikiem zdrowia zwierząt. Dane Twoich zwierząt (profile, szczepienia, waga, dokumenty, zdjęcia) są <strong>przechowywane lokalnie na Twoim urządzeniu</strong> — nie przesyłamy ich do siebie. Aby obsługiwać i ulepszać aplikację, zbieramy ograniczoną ilość w większości anonimowych danych o użytkowaniu za pośrednictwem Google Firebase. Niniejsza polityka wyjaśnia, co przetwarzamy i dlaczego.</p>
+    </div>
+
+    <h2>1. Kto jest administratorem</h2>
+    <p>Aplikacja jest prowadzona pod nazwą handlową <strong>„EK Digital Apps"</strong>. W sprawach prywatności skontaktuj się z nami e-mailem:</p>
+    <p><a href="mailto:petmedibookapp@gmail.com">petmedibookapp@gmail.com</a></p>
+
+    <h2>2. Co przetwarzamy i dlaczego</h2>
+
+    <p><strong>a) Dane przechowywane lokalnie na Twoim urządzeniu (nie zbierane przez nas)</strong></p>
+    <p>Wprowadzane przez Ciebie dane zwierzęcia — imię, gatunek, rasa, data urodzenia, numer chipa, dane o szczepieniach i wadze, notatki oraz przesłane dokumenty i zdjęcia — są przechowywane wyłącznie na Twoim urządzeniu, w pamięci wewnętrznej aplikacji. Nie mamy do nich dostępu ani ich nie przesyłamy.</p>
+
+    <p><strong>b) Dane o użytkowaniu i diagnostyczne (Google Firebase Analytics)</strong></p>
+    <p>Aby zrozumieć i ulepszać sposób korzystania z aplikacji, używamy Google Firebase Analytics. Przetwarzane są: zdarzenia użytkowania (np. które ekrany są otwierane), identyfikator instancji aplikacji, przybliżona (oparta na IP) lokalizacja na poziomie kraju/regionu oraz informacje o urządzeniu i systemie (typ urządzenia, wersja systemu operacyjnego, ustawienie języka). Dane te są w większości anonimowe i nie identyfikują Cię bezpośrednio.</p>
+
+    <p><strong>c) Konfiguracja zdalna (Google Firebase Remote Config)</strong></p>
+    <p>Niektóre ustawienia aplikacji (np. status okresu wprowadzającego) aktualizujemy zdalnie. Aplikacja pobiera konfigurację z serwera; nie wiąże się to ze zbieraniem danych osobowych.</p>
+
+    <p><strong>d) Kopia zapasowa Google Drive (opcjonalna, uruchamiana przez Ciebie)</strong></p>
+    <p>Jeśli włączysz kopię zapasową Google Drive, aplikacja zapisuje dane Twoich zwierząt w ukrytym, prywatnym folderze <strong>Twojego własnego konta Google Drive</strong>. Tylko PetMediBook ma dostęp do tego folderu. Nie widzimy ani nie przechowujemy tych danych — pozostają one w Twojej własnej chmurze.</p>
+
+    <h2>3. Podstawa prawna</h2>
+    <p>Dane o użytkowaniu i diagnostyczne przetwarzamy na podstawie naszego <strong>prawnie uzasadnionego interesu</strong> (art. 6 ust. 1 lit. f RODO), polegającego na zapewnieniu stabilnego działania i ulepszaniu aplikacji, a także — gdy wymaga tego prawo — na podstawie Twojej <strong>zgody</strong>. Dane zwierzęcia na Twoim urządzeniu są przetwarzane na Twoje polecenie, w celu zapewnienia funkcji aplikacji.</p>
+
+    <h2>4. Udostępnianie danych i podmioty przetwarzające</h2>
+    <p>Dane o użytkowaniu są przetwarzane w naszym imieniu przez <strong>Google Ireland Limited / Google LLC</strong> (Firebase) jako podmiot przetwarzający. Google może przetwarzać dane poza Unią Europejską (np. w USA) na podstawie standardowych klauzul umownych (SCC) oraz odpowiednich ram ochrony danych. Zobacz politykę prywatności Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+    <p>Nie sprzedajemy Twoich danych ani nie udostępniamy ich osobom trzecim w celach reklamowych.</p>
+
+    <h2>5. Uprawnienia, o które aplikacja może prosić</h2>
+    <ul>
+      <li><strong>Aparat</strong> – do robienia zdjęć dokumentów.</li>
+      <li><strong>Zdjęcia / multimedia</strong> – do wyboru istniejących obrazów z galerii.</li>
+      <li><strong>Powiadomienia</strong> – do wyświetlania przypomnień o szczepieniach i innych.</li>
+      <li><strong>Uruchamianie po restarcie</strong> – do ponownego zaplanowania przypomnień po ponownym uruchomieniu urządzenia.</li>
+    </ul>
+
+    <h2>6. Okres przechowywania</h2>
+    <p>Dane przechowywane na Twoim urządzeniu pozostają do czasu ich usunięcia w aplikacji lub odinstalowania aplikacji. Dane o użytkowaniu z Firebase Analytics są przechowywane przez Google zgodnie z jego własnymi ustawieniami przechowywania (domyślnie przez ograniczony czas).</p>
+
+    <h2>7. Twoje prawa</h2>
+    <p>Zgodnie z RODO masz prawo do dostępu do swoich danych, ich sprostowania, usunięcia, ograniczenia przetwarzania i przenoszenia, a także prawo do sprzeciwu wobec przetwarzania. Dane na swoim urządzeniu możesz w każdej chwili usunąć bezpośrednio w aplikacji. W sprawie wniosków napisz na powyższy adres. Masz również prawo wniesienia skargi do organu ochrony danych.</p>
+
+    <h2>8. Dzieci</h2>
+    <p>Aplikacja nie jest skierowana do dzieci i nie zbiera świadomie danych osób poniżej 16. roku życia.</p>
+
+    <h2>9. Zmiany niniejszej polityki</h2>
+    <p>Możemy od czasu do czasu aktualizować niniejszą politykę. Istotne zmiany zaznaczymy w aplikacji lub na tej stronie poprzez aktualizację daty „Ostatnia aktualizacja" powyżej.</p>
+
+    <div class="contact">
+      <strong>Kontakt</strong><br>
+      PetMediBook · EK Digital Apps<br>
+      <a href="mailto:petmedibookapp@gmail.com">petmedibookapp@gmail.com</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 EK Digital Apps · PetMediBook
+  </footer>
+
 </div>
 
-<div class="highlight">
-  <strong>Röviden:</strong> A PetMediBook az Ön kisállatának egészségügyi adatait <strong>kizárólag az Ön eszközén</strong> tárolja. Mi, mint fejlesztők, <strong>nem férünk hozzá</strong> az Ön adataihoz. Az adatok opcionális biztonsági mentését az <strong>Ön saját Google Drive-ja</strong> egy elkülönített, rejtett mappájában végzi a rendszer. Az alkalmazás <strong>nem tartalmaz reklámokat</strong>, <strong>nem értékesít adatokat</strong>, és <strong>nem alkalmaz felhasználói nyomkövetést</strong>.
-</div>
-
-<h2>1. Az adatkezelő</h2>
-
-<p>
-  <strong>Név:</strong> Kéri Endre (magánszemély szoftverfejlesztő)<br>
-  <strong>Székhely:</strong> Dunakeszi, Magyarország<br>
-  <strong>Kapcsolat:</strong> <a href="mailto:petmedibookapp@gmail.com">petmedibookapp@gmail.com</a>
-</p>
-
-<p>
-  Az adatkezelő nem rendelkezik adatvédelmi tisztviselővel (DPO), mivel adatkezelési tevékenysége nem éri el a GDPR 37. cikkében meghatározott küszöböt. Adatvédelmi kérdésekkel a fenti e-mail címen lehet az adatkezelőhöz fordulni.
-</p>
-
-<h2>2. Mely adatokat kezeljük</h2>
-
-<h3>2.1. Kisállat-egészségügyi adatok (helyben tárolva)</h3>
-<p>Az Ön által rögzített adatok, amelyeket a PetMediBook az Ön eszközén tárol:</p>
-<ul>
-  <li>Kisállat-alapadatok: név, faj, fajta, születési dátum, nem, chip-szám, fénykép</li>
-  <li>Egészségügyi nyilvántartás: oltások típusa, dátuma, állatorvos neve, gyógyszer-batch szám</li>
-  <li>Súly-történet: dátum és súlyértékek</li>
-  <li>Orvosi dokumentumok: leletek, receptek, vizsgálati eredmények (fényképek)</li>
-  <li>Állatorvosi kontaktok: név, klinika, telefonszám, e-mail, cím</li>
-  <li>Időpont-foglalások: dátum, idő, ok, emlékeztető-beállítások</li>
-</ul>
-
-<h3>2.2. Felhasználói fiók- és beállítási adatok</h3>
-<ul>
-  <li>Nyelvi beállítás</li>
-  <li>Google-fiók azonosítója (CSAK akkor, ha aktiválja a Google Drive biztonsági mentést)</li>
-  <li>Előfizetési státusz (Free vagy Premium)</li>
-  <li>Előfizetés-azonosító, amelyet a Google Play Billingtől kapunk (NEM a bankkártyaadatok)</li>
-</ul>
-
-<h3>2.3. Amit NEM gyűjtünk</h3>
-<ul>
-  <li>Hely-adatok (GPS, IP-cím alapú lokáció)</li>
-  <li>Reklám-azonosító (Advertising ID)</li>
-  <li>Eszközhasználati analitika, telemetria, viselkedési minták</li>
-  <li>Kontaktok, naptár, üzenetek vagy egyéb telefon-adatok</li>
-  <li>Bankkártya-adatok (ezeket kizárólag a Google Play Billing kezeli, mi soha nem látjuk)</li>
-</ul>
-
-<h2>3. Az adatkezelés jogalapja és célja</h2>
-
-<p>Az adatkezelés jogalapja a GDPR 6. cikk (1) bekezdés b) pontja szerinti <strong>szerződés teljesítése</strong> (azaz a PetMediBook szolgáltatás Ön számára történő nyújtása), valamint az a) pont szerinti <strong>kifejezett hozzájárulása</strong> (különösen a Google Drive biztonsági mentés tekintetében).</p>
-
-<p>Az adatkezelés célja:</p>
-<ul>
-  <li>A PetMediBook szolgáltatás biztosítása (kisállat-egészségügyi napló vezetése)</li>
-  <li>Az Ön által kérthető opcionális Google Drive biztonsági mentés végrehajtása</li>
-  <li>Az előfizetési státusz nyilvántartása és kezelése</li>
-  <li>A felhasználói támogatás biztosítása az Ön kifejezett megkeresése esetén</li>
-</ul>
-
-<h2>4. Az adatok tárolása</h2>
-
-<h3>4.1. Elsődleges tárolás: az Ön eszköze</h3>
-<p>Minden Ön által rögzített adatot <strong>kizárólag az Ön Android-eszközén</strong> tárolunk, helyi titkosított SQLite-adatbázisban (Room ORM-mel). Az adatok nem kerülnek át sem közvetlenül sem közvetve más szolgáltatóhoz, és <strong>a fejlesztőnek (Kéri Endre) sincs hozzáférése</strong>.</p>
-
-<h3>4.2. Opcionális tárolás: az Ön Google Drive-ja</h3>
-<p>Ha Ön a Beállítások menüpontban aktiválja a Google Drive biztonsági mentést, az alkalmazás az Ön Google-fiókjához kapcsolódó <strong>rejtett, elkülönített app-mappába</strong> (<code>drive.appfolder</code> hatókörben) végez biztonsági másolatot az adatairól. Ez a mappa:</p>
-<ul>
-  <li>Csak a PetMediBook alkalmazás számára látható</li>
-  <li>NEM jelenik meg az Ön Google Drive-jának normál böngészőfelületén</li>
-  <li>Csak az Ön Google-fiókjához van kötve, mi nem férünk hozzá</li>
-  <li>A Google adatkezelési feltételei vonatkoznak rá (lásd: <a href="https://policies.google.com/privacy" target="_blank">Google adatvédelmi szabályzata</a>)</li>
-</ul>
-
-<h2>5. Az adatok továbbítása harmadik félnek</h2>
-
-<p>Adatait <strong>NEM értékesítjük</strong> és <strong>NEM osztjuk meg</strong> harmadik féllel reklámozási vagy üzleti célból.</p>
-
-<p>A következő technikai adatfeldolgozók szolgáltatásait vesszük igénybe:</p>
-
-<ul>
-  <li>
-    <strong>Google LLC (Google Play Billing)</strong> — előfizetések kezelése.
-    A Google Play kezeli a fizetési tranzakciókat. Mi soha nem látjuk a bankkártyaadatait, csak egy névtelen tranzakció-azonosítót kapunk az előfizetés érvényességének ellenőrzéséhez. A Google adatkezelési szabályzata: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>
-  </li>
-  <li>
-    <strong>Google LLC (Google Drive)</strong> — kizárólag az Ön döntése esetén.
-    Csak akkor lép működésbe, ha Ön aktiválja a biztonsági mentést. Ekkor az adatok az Ön Google Drive-jában tárolódnak.
-  </li>
-</ul>
-
-<h2>6. Az adatkezelés időtartama</h2>
-
-<ul>
-  <li><strong>Kisállat-adatok:</strong> az alkalmazás eltávolításáig az Ön eszközéről, vagy amíg Ön törli az adatokat az alkalmazáson belül</li>
-  <li><strong>Drive biztonsági mentés:</strong> amíg Ön törli a PetMediBook hozzáférést a Google-fiók-beállításokban, vagy törli a Drive app-mappát</li>
-  <li><strong>Előfizetési adatok:</strong> az aktív előfizetés időtartama plusz 6 hónap (adójogi célból a Google Play szabályai szerint)</li>
-</ul>
-
-<h2>7. Az Ön jogai a GDPR szerint</h2>
-
-<p>Az EU 2016/679 GDPR-rendelet szerint Önt megilletik a következő jogok:</p>
-
-<h3>7.1. Hozzáférési jog</h3>
-<p>Önnek joga van információt kérni arról, milyen adatait kezeljük. Mivel az adatok kizárólag az Ön eszközén tárolódnak, ez a jog a gyakorlatban azt jelenti, hogy <strong>az alkalmazásban közvetlenül láthatja a saját adatait</strong>.</p>
-
-<h3>7.2. Helyesbítési jog</h3>
-<p>Az alkalmazáson belül bármely adatot módosíthat.</p>
-
-<h3>7.3. Törlési jog ("elfeledtetéshez való jog")</h3>
-<p>Az alkalmazás eltávolításával minden helyi adata törlődik. Ha Google Drive biztonsági mentést használt, a Drive-mappát manuálisan is törölheti a Google-fiók beállításainál (Drive > Beállítások > Alkalmazások kezelése > PetMediBook > Eltávolítás).</p>
-
-<h3>7.4. Adathordozhatóság</h3>
-<p>A Premium-előfizetők a PDF Export funkcióval az alkalmazáson belül letölthetik kisállat-adataikat strukturált formában.</p>
-
-<h3>7.5. Hozzájárulás visszavonása</h3>
-<p>A Google Drive biztonsági mentéshez adott hozzájárulását bármikor visszavonhatja: az alkalmazás Beállítások menüpontjában, vagy közvetlenül a Google-fiókja beállításaiban.</p>
-
-<h3>7.6. Panaszjog</h3>
-<p>Ön panaszt nyújthat be a Nemzeti Adatvédelmi és Információszabadság Hatóságnál (NAIH):</p>
-<ul>
-  <li>Cím: 1055 Budapest, Falk Miksa utca 9-11.</li>
-  <li>Telefon: +36 (1) 391-1400</li>
-  <li>E-mail: ugyfelszolgalat@naih.hu</li>
-  <li>Web: <a href="https://www.naih.hu" target="_blank">www.naih.hu</a></li>
-</ul>
-
-<h2>8. Adatbiztonság</h2>
-
-<p>Az adatok védelmében a következő intézkedéseket alkalmazzuk:</p>
-<ul>
-  <li>Az adatok az Ön eszközén az Android operációs rendszer beépített titkosításával védettek</li>
-  <li>A Google Drive kommunikáció TLS/SSL titkosítással történik</li>
-  <li>A Google Drive-mappa az appfolder hatókörben elkülönített, csak a PetMediBook által hozzáférhető</li>
-  <li>Az előfizetési tranzakciókat a Google Play Billing PCI-DSS-konform infrastruktúrája kezeli</li>
-</ul>
-
-<h2>9. Gyermekek adatai</h2>
-
-<p>A PetMediBook <strong>nem 16 év alatti gyermekek számára</strong> készült. Az alkalmazás a Google Play Store-ban "Mindenkinek" korkategóriába tartozik, de tudatosan nem gyűjtünk adatot gyermekektől. Ha kiderül, hogy egy 16 év alatti felhasználó a szülő beleegyezése nélkül használta az alkalmazást, kérjük értesítsen minket a fenti e-mail címen, és intézkedünk az adatok törléséről.</p>
-
-<h2>10. Sütik és nyomkövetés</h2>
-
-<p>A PetMediBook egy natív Android-alkalmazás. <strong>Nem használunk sütiket</strong>, webes nyomkövetést, ujjlenyomatozást vagy egyéb azonosítási eljárásokat. Nem tartalmaz reklámokat, és nem alkalmaz külső analitikai eszközöket.</p>
-
-<h2>11. A jelen tájékoztató módosítása</h2>
-
-<p>Az adatkezelési gyakorlatok változása esetén ezt a tájékoztatót aktualizáljuk. A módosításokat:</p>
-<ul>
-  <li>Az alkalmazáson belül értesítéssel jelezzük</li>
-  <li>A Google Play Store adatlapunkon közzétesszük</li>
-  <li>Lényeges változás esetén az Ön kifejezett, új hozzájárulását kérjük</li>
-</ul>
-
-<h2>12. Joghatóság és alkalmazandó jog</h2>
-
-<p>A jelen adatvédelmi tájékoztatóra a magyar jog és az EU GDPR-rendelete (2016/679) alkalmazandó. Jogvita esetén az illetékes magyar bíróság jár el. A felek mindenekelőtt békés úton próbálják meg rendezni vitájukat.</p>
-
-<div class="footer">
-  <p><strong>Kapcsolat:</strong> Adatvédelmi kérdésekkel a <a href="mailto:petmedibookapp@gmail.com">petmedibookapp@gmail.com</a> címen lehet hozzánk fordulni.</p>
-  <p><em>Ez a dokumentum a PetMediBook Android-alkalmazás 1.0 verziójához készült. Hatályos: 2026. május 22-től.</em></p>
-</div>
-
+<script>
+  (function(){
+    var supported = ["hu","en","de","es","pl"];
+    var bar = document.getElementById('langbar');
+    var buttons = bar.querySelectorAll('button');
+    var sections = document.querySelectorAll('.lang');
+    function setLang(lang){
+      buttons.forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang')===lang); });
+      sections.forEach(function(s){ s.classList.toggle('show', s.id===lang); });
+      document.documentElement.lang = lang;
+    }
+    bar.addEventListener('click', function(e){
+      var btn = e.target.closest('button');
+      if(!btn) return;
+      setLang(btn.getAttribute('data-lang'));
+      window.scrollTo(0,0);
+    });
+    // A böngésző/eszköz nyelvének automatikus felismerése betöltéskor
+    var nav = (navigator.language || "hu").slice(0,2).toLowerCase();
+    if(supported.indexOf(nav) !== -1){ setLang(nav); }
+  })();
+</script>
 </body>
 </html>
