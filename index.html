@@ -30,11 +30,10 @@
     background:radial-gradient(120% 90% at 50% 0%, rgba(46,125,50,.35) 0%, rgba(10,10,10,0) 60%);
   }
   .logo{
-    width:104px;height:104px;margin:0 auto 20px;border-radius:26px;
-    background:radial-gradient(70% 70% at 50% 42%, #39905A 0%, #2C7A49 70%, #215E39 100%);
-    display:flex;align-items:center;justify-content:center;
-    box-shadow:0 0 0 3px rgba(129,199,132,.35), 0 14px 40px rgba(0,0,0,.5);
+    width:108px;height:108px;margin:0 auto 20px;border-radius:50%;overflow:hidden;
+    box-shadow:0 0 0 1px rgba(129,199,132,.30), 0 0 42px rgba(129,199,132,.28), 0 14px 40px rgba(0,0,0,.55);
   }
+  .logo img{width:100%;height:100%;object-fit:cover;display:block}
   h1{font-size:2.15rem;font-weight:900;letter-spacing:-.5px;margin-bottom:10px}
   h1 .dot{color:var(--green-bright)}
   .tagline{font-size:1.18rem;font-weight:700;color:var(--text);max-width:34ch;margin:0 auto 14px}
@@ -89,15 +88,7 @@
   <header class="hero">
     <div class="wrap">
       <div class="logo" aria-label="PetMediBook logo">
-        <svg width="56" height="56" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" fill="#EAF7EC">
-          <g transform="translate(0,-30)">
-            <ellipse cx="360" cy="524" rx="66" ry="90" transform="rotate(-18 360 524)"/>
-            <ellipse cx="468" cy="430" rx="68" ry="95" transform="rotate(-7 468 430)"/>
-            <ellipse cx="612" cy="430" rx="68" ry="95" transform="rotate(7 612 430)"/>
-            <ellipse cx="720" cy="524" rx="66" ry="90" transform="rotate(18 720 524)"/>
-            <path d="M540 556 C 678 556, 782 646, 782 744 C 782 850, 672 908, 540 908 C 408 908, 298 850, 298 744 C 298 646, 402 556, 540 556 Z"/>
-          </g>
-        </svg>
+        <img src="logo.png" alt="PetMediBook icon" width="108" height="108" />
       </div>
       <h1>PetMediBook<span class="dot">.</span></h1>
       <p class="tagline">Your pet's health records &amp; memories — in one private app.</p>
