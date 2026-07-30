@@ -9,6 +9,12 @@
 <meta name="robots" content="index, follow" />
 <meta name="author" content="EK Digital Apps" />
 <link rel="canonical" href="https://petmedibookapp.github.io/petmedibook/" />
+<link rel="alternate" hreflang="en" href="https://petmedibookapp.github.io/petmedibook/" />
+<link rel="alternate" hreflang="hu" href="https://petmedibookapp.github.io/petmedibook/hu.html" />
+<link rel="alternate" hreflang="es" href="https://petmedibookapp.github.io/petmedibook/es.html" />
+<link rel="alternate" hreflang="de" href="https://petmedibookapp.github.io/petmedibook/de.html" />
+<link rel="alternate" hreflang="pl" href="https://petmedibookapp.github.io/petmedibook/pl.html" />
+<link rel="alternate" hreflang="x-default" href="https://petmedibookapp.github.io/petmedibook/" />
 
 <!-- Open Graph -->
 <meta property="og:site_name" content="PetMediBook" />
@@ -89,6 +95,10 @@
   .sub{font-size:1.02rem;color:var(--muted);max-width:46ch;margin:0 auto 8px}
   .usp{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:18px auto 4px;max-width:52ch}
   .usp span{font-size:.86rem;font-weight:800;color:var(--green-bright);background:rgba(129,199,132,.10);border:1px solid rgba(129,199,132,.30);border-radius:999px;padding:6px 12px}
+  .langbar{display:flex;gap:6px;justify-content:center;margin-bottom:14px;flex-wrap:wrap}
+  .langbar a{font-size:.82rem;font-weight:800;color:var(--muted);padding:4px 10px;border-radius:999px;border:1px solid rgba(129,199,132,.18)}
+  .langbar a:hover{border-color:var(--green-bright)}
+  .langbar a.on{color:var(--green-bright);border-color:rgba(129,199,132,.45)}
   section{padding:26px 0}
   .features{display:grid;grid-template-columns:1fr;gap:14px}
   .card{
@@ -147,6 +157,13 @@
 <body>
   <header class="hero">
     <div class="wrap">
+      <nav class="langbar" aria-label="Language">
+        <a href="index.html" class="on" hreflang="en">EN</a>
+        <a href="hu.html" hreflang="hu">HU</a>
+        <a href="es.html" hreflang="es">ES</a>
+        <a href="de.html" hreflang="de">DE</a>
+        <a href="pl.html" hreflang="pl">PL</a>
+      </nav>
       <div class="logo" aria-label="PetMediBook logo">
         <img src="logo.png" alt="PetMediBook app icon" width="108" height="108" />
       </div>

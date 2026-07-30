@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PetMediBook – Kostenloser Impfpass &amp; Gesundheits-App</title>
+<meta name="description" content="Erfasse Impfungen, Gewicht und Tierarzt-Unterlagen deines Hundes oder deiner Katze in einer privaten, offline App. Ohne Konto, kostenlos bei Google Play." />
+<meta name="keywords" content="Impfpass Hund App, Impfausweis Haustier, Hund Gesundheit App, Tier Impfpass digital, Impftermin Erinnerung Hund" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="EK Digital Apps" />
+<link rel="canonical" href="https://petmedibookapp.github.io/petmedibook/de.html" />
+<link rel="alternate" hreflang="en" href="https://petmedibookapp.github.io/petmedibook/" />
+<link rel="alternate" hreflang="hu" href="https://petmedibookapp.github.io/petmedibook/hu.html" />
+<link rel="alternate" hreflang="es" href="https://petmedibookapp.github.io/petmedibook/es.html" />
+<link rel="alternate" hreflang="de" href="https://petmedibookapp.github.io/petmedibook/de.html" />
+<link rel="alternate" hreflang="pl" href="https://petmedibookapp.github.io/petmedibook/pl.html" />
+<link rel="alternate" hreflang="x-default" href="https://petmedibookapp.github.io/petmedibook/" />
+<meta property="og:site_name" content="PetMediBook" />
+<meta property="og:title" content="PetMediBook – Kostenloser Impfpass &amp; Gesundheits-App" />
+<meta property="og:description" content="Impfungen, Gewicht, Dokumente und Erinnerungen deines Tieres in einer privaten App. Ohne Konto. Funktioniert offline." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://petmedibookapp.github.io/petmedibook/de.html" />
+<meta property="og:image" content="https://petmedibookapp.github.io/petmedibook/logo.png" />
+<meta property="og:locale" content="de_DE" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PetMediBook","operatingSystem":"Android","applicationCategory":"LifestyleApplication","description":"Private, offline App für Impfungen, Gewicht, Tierarzt-Unterlagen und Alltagsmomente deines Tieres. Dokumentations- und Erinnerungstool — keine medizinische Beratung.","url":"https://petmedibookapp.github.io/petmedibook/de.html","downloadUrl":"https://play.google.com/store/apps/details?id=com.ekdigital.petmedibook","image":"https://petmedibookapp.github.io/petmedibook/logo.png","inLanguage":["de"],"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Organization","name":"EK Digital Apps"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Ist PetMediBook kostenlos?","acceptedAnswer":{"@type":"Answer","text":"Ja — der Download und die Nutzung sind kostenlos. Einige Funktionen könnten künftig Teil eines optionalen Premium-Plans sein."}},
+{"@type":"Question","name":"Brauche ich ein Konto?","acceptedAnswer":{"@type":"Answer","text":"Nein, es funktioniert ohne Registrierung. Deine Daten bleiben auf deinem Gerät."}},
+{"@type":"Question","name":"Funktioniert es offline?","acceptedAnswer":{"@type":"Answer","text":"Ja, vollständig offline. Ein Backup in deinem eigenen Google Drive ist optional."}},
+{"@type":"Question","name":"Was kann ich erfassen?","acceptedAnswer":{"@type":"Answer","text":"Impfungen mit Datum, Gewicht über die Zeit, Tierarzt-Dokumente, Erinnerungen und Alltagsmomente — für ein oder mehrere Tiere."}},
+{"@type":"Question","name":"Kann ich die Daten exportieren?","acceptedAnswer":{"@type":"Answer","text":"Ja, du kannst einen sauberen medizinischen Auszug als PDF für den Tierarzt exportieren."}},
+{"@type":"Question","name":"Ist das medizinische Beratung?","acceptedAnswer":{"@type":"Answer","text":"Nein. PetMediBook ist ein Dokumentations- und Erinnerungstool, kein medizinischer oder diagnostischer Dienst."}}
+]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  :root{--black:#0A0A0A;--panel:#111814;--green-dark:#1B5E20;--green:#2E7D32;--green-bright:#81C784;--green-neon:#00E676;--text:#EAF7EC;--muted:#9FB4A6}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Nunito',system-ui,sans-serif;background:var(--black);color:var(--text);line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px}
+  header.hero{text-align:center;padding:34px 0 44px;background:radial-gradient(120% 90% at 50% 0%, rgba(46,125,50,.35) 0%, rgba(10,10,10,0) 60%)}
+  .langbar{display:flex;gap:6px;justify-content:center;margin-bottom:26px;flex-wrap:wrap}
+  .langbar a{font-size:.82rem;font-weight:800;color:var(--muted);padding:4px 10px;border-radius:999px;border:1px solid rgba(129,199,132,.18)}
+  .langbar a:hover{border-color:var(--green-bright)}
+  .langbar a.on{color:var(--green-bright);border-color:rgba(129,199,132,.45)}
+  .logo{width:108px;height:108px;margin:0 auto 20px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 1px rgba(129,199,132,.30),0 0 42px rgba(129,199,132,.28),0 14px 40px rgba(0,0,0,.55)}
+  .logo img{width:100%;height:100%;object-fit:cover;display:block}
+  h1{font-size:2.15rem;font-weight:900;letter-spacing:-.5px;margin-bottom:10px}
+  h1 .dot{color:var(--green-bright)}
+  .tagline{font-size:1.18rem;font-weight:700;color:var(--text);max-width:38ch;margin:0 auto 14px}
+  .sub{font-size:1.02rem;color:var(--muted);max-width:52ch;margin:0 auto 8px}
+  .usp{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:18px auto 4px;max-width:56ch}
+  .usp span{font-size:.86rem;font-weight:800;color:var(--green-bright);background:rgba(129,199,132,.10);border:1px solid rgba(129,199,132,.30);border-radius:999px;padding:6px 12px}
+  section{padding:26px 0}
+  .features{display:grid;grid-template-columns:1fr;gap:14px}
+  .card{background:var(--panel);border:1px solid rgba(129,199,132,.14);border-radius:16px;padding:20px;display:flex;gap:16px;align-items:flex-start}
+  .card .ic{flex:0 0 auto;width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(46,125,50,.25);border:1px solid rgba(129,199,132,.3);font-size:1.4rem}
+  .card h3{font-size:1.08rem;font-weight:800;margin-bottom:3px}
+  .card p{color:var(--muted);font-size:.98rem}
+  .cta{text-align:center;padding:30px 0 10px}
+  .cta h2{font-size:1.35rem;font-weight:900;margin-bottom:6px}
+  .cta .note{color:var(--muted);margin-bottom:20px}
+  .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 20px;border-radius:12px;font-weight:800;font-size:1rem;background:var(--panel);border:1px solid rgba(129,199,132,.28);transition:transform .12s ease,border-color .12s ease}
+  .btn:hover{transform:translateY(-2px);border-color:var(--green-bright)}
+  .btn.primary{background:linear-gradient(180deg,#2E7D32,#1B5E20);border-color:transparent}
+  .btn svg{width:20px;height:20px}
+  .h2c{text-align:center;font-size:1.35rem;font-weight:900;margin-bottom:6px}
+  .h2sub{text-align:center;color:var(--muted);margin-bottom:24px}
+  .privacy{margin:30px 0 6px;text-align:center;background:var(--panel);border:1px solid rgba(129,199,132,.14);border-radius:16px;padding:22px}
+  .privacy strong{color:var(--green-bright)}
+  .privacy p{color:var(--muted);max-width:58ch;margin:6px auto 0}
+  .shots{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+  .shots figure{width:212px;max-width:44vw;text-align:center;margin:0}
+  .shots img{width:100%;border-radius:22px;border:1px solid rgba(129,199,132,.18);box-shadow:0 14px 40px rgba(0,0,0,.55);display:block}
+  .shots figcaption{margin-top:10px;color:var(--muted);font-size:.88rem}
+  .faq{display:grid;gap:10px}
+  .faq details{background:var(--panel);border:1px solid rgba(129,199,132,.14);border-radius:14px;padding:14px 18px}
+  .faq summary{font-weight:800;cursor:pointer;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--green-bright);font-weight:900}
+  .faq details[open] summary::after{content:"–"}
+  .faq p{color:var(--muted);margin-top:8px}
+  footer{text-align:center;padding:34px 0 46px;color:var(--muted);font-size:.9rem}
+  footer .links{margin-bottom:10px}
+  footer .links a{color:var(--green-bright);font-weight:700}
+  footer .sep{opacity:.4;margin:0 8px}
+  footer .langs{opacity:.7;font-size:.85rem}
+  @media(min-width:620px){.features{grid-template-columns:1fr 1fr}.features .card:first-child{grid-column:1/-1}h1{font-size:2.5rem}}
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <nav class="langbar" aria-label="Sprache">
+        <a href="index.html" hreflang="en">EN</a>
+        <a href="hu.html" hreflang="hu">HU</a>
+        <a href="es.html" hreflang="es">ES</a>
+        <a href="de.html" class="on" hreflang="de">DE</a>
+        <a href="pl.html" hreflang="pl">PL</a>
+      </nav>
+      <div class="logo" aria-label="PetMediBook Logo"><img src="logo.png" alt="PetMediBook App-Symbol" width="108" height="108" /></div>
+      <h1>PetMediBook<span class="dot">.</span></h1>
+      <p class="tagline">Die private, offline App für Impfpass und Gesundheit deines Tieres.</p>
+      <p class="sub">Behalte Impfungen, Gewicht, Tierarzt-Unterlagen und die kleinen Alltagsmomente deines Hundes oder deiner Katze an einem Ort — ohne Konto, funktioniert offline.</p>
+      <div class="usp"><span>🔒 Privat</span><span>📴 Offline</span><span>🙅 Kein Konto</span><span>💚 Kostenlos starten</span></div>
+      <div class="btns" style="margin-top:22px">
+        <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.ekdigital.petmedibook" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.3 13 12 3.6 21.7c-.3-.2-.6-.6-.6-1.1V3.4c0-.5.3-.9.6-1.1zM14.7 13.7l2.6 2.6-8.9 5.1 6.3-7.7zM17.8 10.2l2.9 1.6c.7.4.7 1.2 0 1.6l-2.9 1.6-2.9-3 2.9-2.8zM8.4 2.6l8.9 5.1-2.6 2.6-6.3-7.7z"/></svg>
+          Bei Google Play herunterladen
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <div class="features">
+        <div class="card"><div class="ic">📋</div><div><h3>Impfungen &amp; Unterlagen, geordnet</h3><p>Erfasse Impfungen mit Datum, das Gewicht über die Zeit, Dokumente und Tierarzt-Daten — an einem privaten Ort, als sauberes PDF für den Tierarzt exportierbar.</p></div></div>
+        <div class="card"><div class="ic">📖</div><div><h3>Tagebuch &amp; Erinnerungskarten</h3><p>Halte Alltagsmomente fest und mach aus einem Meilenstein eine schöne, teilbare Karte.</p></div></div>
+        <div class="card"><div class="ic">🔔</div><div><h3>Erinnerungen, die du festlegst</h3><p>Verpasse keine Impftermine und wichtigen Ereignisse — du entscheidest, was und wann.</p></div></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="h2c">Ein Blick hinein</h2>
+      <p class="h2sub">Klar, privat und für den Tieralltag gemacht.</p>
+      <div class="shots">
+        <figure><img src="shot-pets.png" alt="Meine-Tiere-Bildschirm" loading="lazy" /><figcaption>Deine Tiere auf einen Blick</figcaption></figure>
+        <figure><img src="shot-luna.png" alt="Gesundheitsakte und PDF-Export" loading="lazy" /><figcaption>Unterlagen &amp; PDF-Export</figcaption></figure>
+        <figure><img src="shot-settings.png" alt="Private Sicherung und Einstellungen" loading="lazy" /><figcaption>Private Sicherung &amp; Einstellungen</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Jetzt bei Google Play</h2>
+      <p class="note">Kostenlos herunterladen. Ohne Konto. Funktioniert offline.</p>
+      <div class="btns">
+        <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.ekdigital.petmedibook" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.3 13 12 3.6 21.7c-.3-.2-.6-.6-.6-1.1V3.4c0-.5.3-.9.6-1.1zM14.7 13.7l2.6 2.6-8.9 5.1 6.3-7.7zM17.8 10.2l2.9 1.6c.7.4.7 1.2 0 1.6l-2.9 1.6-2.9-3 2.9-2.8zM8.4 2.6l8.9 5.1-2.6 2.6-6.3-7.7z"/></svg>
+          Bei Google Play herunterladen
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="h2c">Häufige Fragen</h2>
+      <p class="h2sub">Alles, was du vor dem Download wissen musst.</p>
+      <div class="faq">
+        <details><summary>Ist PetMediBook kostenlos?</summary><p>Ja — der Download und die Nutzung sind kostenlos. Einige Funktionen könnten künftig Teil eines optionalen Premium-Plans sein.</p></details>
+        <details><summary>Brauche ich ein Konto?</summary><p>Nein, es funktioniert ohne Registrierung. Deine Daten bleiben auf deinem Gerät.</p></details>
+        <details><summary>Funktioniert es offline?</summary><p>Ja, vollständig offline. Ein Backup in deinem eigenen Google Drive ist optional.</p></details>
+        <details><summary>Was kann ich erfassen?</summary><p>Impfungen mit Datum, Gewicht über die Zeit, Tierarzt-Dokumente, Erinnerungen und Alltagsmomente — für ein oder mehrere Tiere.</p></details>
+        <details><summary>Kann ich die Daten exportieren?</summary><p>Ja, du kannst einen sauberen medizinischen Auszug als PDF für den Tierarzt exportieren.</p></details>
+        <details><summary>Ist das medizinische Beratung?</summary><p>Nein. PetMediBook ist ein Dokumentations- und Erinnerungstool, kein medizinischer oder diagnostischer Dienst.</p></details>
+      </div>
+    </section>
+
+    <section>
+      <div class="privacy">
+        <strong>Privat by Design.</strong>
+        <p>PetMediBook ist ein Dokumentations- und Erinnerungstool — <strong>keine medizinische Beratung</strong>. Deine Daten bleiben auf deinem Gerät; die Synchronisierung mit deinem eigenen Google Drive ist optional. Kein Konto nötig.</p>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Verfolge den Weg</h2>
+      <p class="note">Von einer Person gebaut, öffentlich. Lade sie heute herunter — und bleib dran.</p>
+      <div class="btns">
+        <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.ekdigital.petmedibook" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.3 13 12 3.6 21.7c-.3-.2-.6-.6-.6-1.1V3.4c0-.5.3-.9.6-1.1zM14.7 13.7l2.6 2.6-8.9 5.1 6.3-7.7zM17.8 10.2l2.9 1.6c.7.4.7 1.2 0 1.6l-2.9 1.6-2.9-3 2.9-2.8zM8.4 2.6l8.9 5.1-2.6 2.6-6.3-7.7z"/></svg>
+          Google Play
+        </a>
+        <a class="btn primary" href="https://www.tiktok.com/@petmedibook" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.3 2.1 1.6 3.6 3.6 3.9v2.5c-1.3.1-2.5-.3-3.6-1v6.4c0 3.2-2.4 5.7-5.6 5.7-3 0-5.4-2.3-5.4-5.3 0-3.1 2.6-5.5 6-5.1v2.6c-.4-.1-.9-.2-1.3-.2-1.5 0-2.6 1.1-2.6 2.6 0 1.5 1.2 2.6 2.7 2.6 1.6 0 2.7-1.2 2.7-2.9V3h3.1z"/></svg>
+          TikTok
+        </a>
+        <a class="btn primary" href="https://www.youtube.com/@petmedibook" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.1-.4-4.6a2.6 2.6 0 0 0-1.8-1.8C19.3 5.2 12 5.2 12 5.2s-7.3 0-8.8.4A2.6 2.6 0 0 0 1.4 7.4C1 8.9 1 12 1 12s0 3.1.4 4.6c.2.9.9 1.6 1.8 1.8 1.5.4 8.8.4 8.8.4s7.3 0 8.8-.4a2.6 2.6 0 0 0 1.8-1.8c.4-1.5.4-4.6.4-4.6zM9.8 15.3V8.7l6.1 3.3-6.1 3.3z"/></svg>
+          YouTube
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="links"><a href="privacy-en.html">Datenschutz</a><span class="sep">·</span><a href="terms-en.html">Nutzungsbedingungen</a></div>
+      <div class="langs">Verfügbar auf Englisch · Spanisch · Ungarisch · Deutsch · Polnisch</div>
+      <div style="margin-top:14px;opacity:.5">© 2026 EK Digital Apps — PetMediBook</div>
+    </div>
+  </footer>
+</body>
+</html>
